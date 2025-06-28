@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar Recipe Cards</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e8ecf0;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        
+        .card-header .plate-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .ingredients {
+            margin-bottom: 20px;
+        }
+        
+        .ingredients h3 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .ingredient-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .method {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .method h3 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        
+        .method p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ecf0f1;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .cost {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        .price::before {
+            content: "Sales: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        
+        .margin {
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .margin::before {
+            content: "Margin: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        .placeholder {
+            border-left: 4px solid #f39c12;
+        }
+        
+        .placeholder .card-header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRÙ Wine Bar - Dinner Menu</h1>
+            <div class="service-time" style="color: #764ba2; font-size: 1.2em; margin-top: 10px; font-weight: bold;">
+                Monday-Thursday & Sunday: 3:00 PM - 10:30 PM | Friday-Saturday: 3:00 PM - 11:30 PM
+            </div>
+        </div>
+        
+        <div class="cards-grid">
+            <!-- Beet Salad Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Beet Salad</h2>
+                    <div class="plate-info">Blue Bowl</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredient-list">
+                            <li>Gold beets, roasted & wedged <span class="quantity">3 pc</span></li>
+                            <li>Candystripe beets, prepared <span class="quantity">4 pc</span></li>
+                            <li>Haricot verts, blanched <span class="quantity">9 pc</span></li>
+                            <li>Goat cheese <span class="quantity">garnish</span></li>
+                            <li>EVOO, lemon juice, torn basil <span class="quantity">dressing</span></li>
+                            <li>Italian parsley, chopped <span class="quantity">garnish</span></li>
+                            <li>Microgreens <span class="quantity">garnish</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>Toss green beans and beets with EVOO, lemon juice, torn basil & S&P. Plate in bowl, crumble goat cheese over salad. Garnish with chopped parsley and microgreens.</p>
+                    </div>
+                    <div class="pricing">
+                        <span class="cost">Cost: $2.55</span>
+                        <span class="price">$15.00</span>
+                        <span class="margin">$12.45</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Edamame Hummus Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Edamame Hummus</h2>
+                    <div class="plate-info">Yield Recipe</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Base Hummus</h3>
+                        <ul class="ingredient-list">
+                            <li>Chickpeas, drained <span class="quantity">60 oz</span></li>
+                            <li>Lemon juice <span class="quantity">1 cup</span></li>
+                            <li>Tahini <span class="quantity">1 cup</span></li>
+                            <li>Garlic cloves, chopped <span class="quantity">3 ea</span></li>
+                            <li>Olive oil blend <span class="quantity">1.25 cup</span></li>
+                            <li>Ground cumin <span class="quantity">2 tsp</span></li>
+                            <li>Water <span class="quantity">0.5 cup</span></li>
+                        </ul>
+                        <h3>Edamame Addition</h3>
+                        <ul class="ingredient-list">
+                            <li>Shelled edamame, thawed <span class="quantity">2 lbs</span></li>
+                            <li>Water <span class="quantity">1.5 cups</span></li>
+                            <li>Base hummus <span class="quantity">8 cups</span></li>
+                            <li>Lemon juice <span class="quantity">as needed</span></li>
+                            <li>S&P <span class="quantity">as needed</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>Place drained garbanzo beans in robot coupe. Add water, garlic, tahini & lemon until smooth paste forms. Add olive oil slowly, drizzle oil into hummus with robot. Remove hummus from robot coupe. Process shelled edamame with 1.5 cups water until smooth paste forms. Add to bowl with hummus, stir with a spatula to incorporate. Season with salt & pepper and additional lemon juice to taste.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Burrata & Roasted Tomatoes Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Burrata & Roasted Tomatoes</h2>
+                    <div class="plate-info">Blue Bowl</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredient-list">
+                            <li>Burrata <span class="quantity">2 oz</span></li>
+                            <li>Arugula, dressed in EVOO <span class="quantity">0.25 oz</span></li>
+                            <li>Campari tomatoes, roasted <span class="quantity">2 ea</span></li>
+                            <li>Pistachios, toasted & chopped <span class="quantity">garnish</span></li>
+                            <li>EVOO <span class="quantity">garnish</span></li>
+                            <li>Paesano bread, toasted <span class="quantity">2 pc</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>Place dressed arugula on bowl. Place burrata on arugula, season with little sea salt. Place bread behind burrata, place tomato cluster in center of burrata, garnish with chopped pistachios & EVOO.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shaking Beef Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Shaking Beef</h2>
+                    <div class="plate-info">Earthenware Rectangle Plate</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredient-list">
+                            <li>Beef tips, large cubes <span class="quantity">5 oz</span></li>
+                            <li>Shaking beef marinade <span class="quantity">3 oz</span></li>
+                            <li>Arugula, dressed in EVOO <span class="quantity">0.25 oz</span></li>
+                            <li>White sesame seeds <span class="quantity">garnish</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>Preheat a cast iron skillet to near smoke point. Add small amount of oil, add beef cubes. Hard sear the first side of beef, then shake the pan vigorously to sear other sides of beef and cook to medium. Glaze beef with spicy lemon sauce, reduce. Place dressed arugula down center of plate, place seared beef on arugula, garnish with sesame seeds.</p>
+                    </div>
+                    <div class="pricing">
+                        <span class="cost">Cost: $3.05</span>
+                        <span class="price">$16.00</span>
+                        <span class="margin">$12.95</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cast Iron Seared Shrimp Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Cast Iron Seared Shrimp</h2>
+                    <div class="plate-info">12" Round Bowl</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Main Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Red Argentine Shrimp (16-20) <span class="quantity">0.3 lb</span></li>
+                            <li>Spinach Parmesan Risotto <span class="quantity">3 oz</span></li>
+                            <li>Microgreens <span class="quantity">garnish</span></li>
+                        </ul>
+                        <h3>Sauce</h3>
+                        <ul class="ingredient-list">
+                            <li>Yellow cherry tomatoes, halved <span class="quantity">4 ea</span></li>
+                            <li>Garlic, minced <span class="quantity">0.5 tsp</span></li>
+                            <li>Lemon juice <span class="quantity">0.5 oz</span></li>
+                            <li>White wine <span class="quantity">1 oz</span></li>
+                            <li>S&P <span class="quantity">0.13 TT</span></li>
+                            <li>Butter, softened <span class="quantity">0.5 oz</span></li>
+                            <li>Basil, chiffonade <span class="quantity">0.13 leaf</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>Sear shrimp in a CAST IRON skillet until seared, rotate begin making sauce. Plate risotto in the center of a coupe bowl and arrange scallops around risotto. Spoon sauce on and around the shrimp, garnish with microgreens. To make sauce: Heat olive oil in a sauté pan, add garlic and sauté for 30 seconds, add yellow tomatoes, lemon juice, white wine, salt and pepper. Reduce to sauce consistency. Add butter, and incorporate.</p>
+                    </div>
+                    <div class="pricing">
+                        <span class="cost">Cost: $5.59</span>
+                        <span class="price">$32.00</span>
+                        <span class="margin">$26.41</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Zealand Lamb Lollipops Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>New Zealand Lamb Lollipops</h2>
+                    <div class="plate-info">Earthenware Rectangle Plate</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Main Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Lumina NZ lamb, french clean, cut in 2 bone <span class="quantity">1 ea</span></li>
+                            <li>Pistachio pesto (batch recipe) <span class="quantity">1 oz</span></li>
+                            <li>Arugula, dressed w EVOO, lemon juice <span class="quantity">0.25 oz</span></li>
+                        </ul>
+                        <h3>Lamb Marinade</h3>
+                        <ul class="ingredient-list">
+                            <li>Olive oil blend <span class="quantity">as needed</span></li>
+                            <li>Fresh thyme <span class="quantity">as needed</span></li>
+                            <li>Garlic, minced <span class="quantity">as needed</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>In a heated saute pan season and brown the lamb "rack". Place in oven and cook to desired temperature, this item is to be served medium rare unless the customer says different. Cut lamb into two chops, place the dressed arugula on the plate, cross lamb on the bed of arugula, garnish with small spoonful of pesto on cut side of lamb.</p>
+                    </div>
+                    <div class="pricing">
+                        <span class="cost">Cost: $5.81</span>
+                        <span class="price">$18.00</span>
+                        <span class="margin">$12.19</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pan Seared Salmon Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Pan Seared Salmon</h2>
+                    <div class="plate-info">12" Round Bowl</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Main Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Salmon Filet <span class="quantity">7 oz</span></li>
+                            <li>Haricot vert, blanched <span class="quantity">9 pc</span></li>
+                            <li>Campari tomatoes, roasted on vine <span class="quantity">2 ea</span></li>
+                        </ul>
+                        <h3>Lemon Dill Butter Sauce</h3>
+                        <ul class="ingredient-list">
+                            <li>White wine <span class="quantity">1 oz</span></li>
+                            <li>Lemon juice <span class="quantity">0.5 oz</span></li>
+                            <li>Lemon wheels, sliced thin <span class="quantity">1 ea</span></li>
+                            <li>Butter, softened <span class="quantity">1 oz</span></li>
+                            <li>Dill, chopped <span class="quantity">0.13 tt</span></li>
+                            <li>S&p <span class="quantity">0.13 tt</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p>Season the salmon with salt and pepper. In a hot pan sear until golden brown. Remove from the pan and place on a sizzle plate and finish in the oven. Heat green beans with small amount of butter and S&P. Make the sauce in the fish pan by adding the white wine, lemon juice, lemon wheel, dill & s&p, reduce and incorporate the butter. Plate green beans in center of bowl, place salmon on top of the beans, pour sauce over the fish. Garnish the salmon with the lemon wheel, roasted tomatoes & microgreens.</p>
+                    </div>
+                    <div class="pricing">
+                        <span class="cost">Cost: $6.62</span>
+                        <span class="price">$30.00</span>
+                        <span class="margin">$23.38</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wagyu Meatballs Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Wagyu Meatballs</h2>
+                    <div class="plate-info">Recipe Details Needed - $17</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>San marzano tomato basil sauce <span class="quantity">TBD</span></li>
+                            <li>Herb ricotta <span class="quantity">TBD</span></li>
+                            <li>Reggiano <span class="quantity">TBD</span></li>
+                            <li>Rustic bread <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mediterranean Flatbread Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Mediterranean Flatbread</h2>
+                    <div class="plate-info">Recipe Details Needed - $16</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Goat cheese <span class="quantity">TBD</span></li>
+                            <li>Artichokes <span class="quantity">TBD</span></li>
+                            <li>Olives <span class="quantity">TBD</span></li>
+                            <li>Roasted peppers <span class="quantity">TBD</span></li>
+                            <li>Tomatoes <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shrimp Potstickers Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Shrimp Potstickers</h2>
+                    <div class="plate-info">Recipe Details Needed - $17</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Fresno chilies <span class="quantity">TBD</span></li>
+                            <li>Sweet chile ponzu <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goat Cheese Beignets Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Goat Cheese Beignets</h2>
+                    <div class="plate-info">Recipe Details Needed - $14</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Goat cheese <span class="quantity">TBD</span></li>
+                            <li>Honey <span class="quantity">TBD</span></li>
+                            <li>Cracked pepper <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fritto Misto Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Fritto Misto</h2>
+                    <div class="plate-info">Recipe Details Needed - $18</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Point Judith (USA) calamari <span class="quantity">TBD</span></li>
+                            <li>Shrimp <span class="quantity">TBD</span></li>
+                            <li>Spicy san marzano marinara <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grilled Cheese & Tomato Soup Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Grilled Cheese & Tomato Soup</h2>
+                    <div class="plate-info">Recipe Details Needed - $15</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Taleggio cheese panini <span class="quantity">TBD</span></li>
+                            <li>White truffle oil <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Margherita Pizza Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Margherita Pizza</h2>
+                    <div class="plate-info">Stone Fired - $18</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>San marzano pizza sauce <span class="quantity">TBD</span></li>
+                            <li>Whole basil <span class="quantity">TBD</span></li>
+                            <li>Fior di latte <span class="quantity">TBD</span></li>
+                            <li>Optional: Wagyu meatballs <span class="quantity">+$5</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Butcher Pizza Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>The Butcher Pizza</h2>
+                    <div class="plate-info">Stone Fired - $20</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Fresh mozzarella <span class="quantity">TBD</span></li>
+                            <li>Prosciutto <span class="quantity">TBD</span></li>
+                            <li>Capicola <span class="quantity">TBD</span></li>
+                            <li>Soppressata <span class="quantity">TBD</span></li>
+                            <li>San marzano pizza sauce <span class="quantity">TBD</span></li>
+                            <li>Oregano <span class="quantity">TBD</span></li>
+                            <li>Optional: Wagyu meatballs <span class="quantity">+$5</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pear & Gorgonzola Pizza Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Pear & Gorgonzola Pizza</h2>
+                    <div class="plate-info">Stone Fired - $19</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>D'anjou pear <span class="quantity">TBD</span></li>
+                            <li>Caramelized onion <span class="quantity">TBD</span></li>
+                            <li>Basil <span class="quantity">TBD</span></li>
+                            <li>Honey <span class="quantity">TBD</span></li>
+                            <li>Parmesan <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cast Iron Seared Prime Bistro Steak Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Cast Iron Seared Prime Bistro Steak</h2>
+                    <div class="plate-info">Recipe Details Needed - $34</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Truffle potato gratin <span class="quantity">TBD</span></li>
+                            <li>Petit green beans <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herb Roasted Salmon Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Herb Roasted Salmon</h2>
+                    <div class="plate-info">Recipe Details Needed - $30</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Petit green beans <span class="quantity">TBD</span></li>
+                            <li>Campari tomato <span class="quantity">TBD</span></li>
+                            <li>Lemon dill butter <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Note: Similar to Pan Seared Salmon - may be same recipe</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chicken Alla Francese Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Chicken Alla Francese</h2>
+                    <div class="plate-info">Recipe Details Needed - $24</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Spicy garlicky broccolini <span class="quantity">TBD</span></li>
+                            <li>Lemon herb sauce <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

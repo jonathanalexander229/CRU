@@ -1,0 +1,84 @@
+name: "Charcuterie/Premier Cru"
+menu_periods:
+  - dinner
+  - appetizer
+plate_info: "Wooden board"
+status: complete
+
+ingredients:
+  - name: "Soppressata, 5 slices"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 1.54
+    total_cost: 1.54
+  - name: "Prosciutto (vola) w dan danelli"
+    quantity: 3
+    unit: "ea"
+    cost_per_unit: 0.40
+    total_cost: 1.20
+  - name: "Capicola 5 slices (VOLPI BRAND)"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.68
+    total_cost: 0.68
+  - name: "Manchego cheese - 1 slice (1 year)"
+    quantity: 1.5
+    unit: "oz"
+    cost_per_unit: 0.63
+    total_cost: 0.95
+  - name: "Goat cheese (laura Chenel)"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.67
+    total_cost: 0.67
+  - name: "Whole grain mustard"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.10
+    total_cost: 0.05
+  - name: "Cornichons and mustard"
+    quantity: 4
+    unit: "ea"
+    cost_per_unit: 0.03
+    total_cost: 0.12
+  - name: "Roman style artichokes w/stem"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.80
+    total_cost: 0.80
+  - name: "Paesano bread, 2 slices 1/2 inch thick"
+    quantity: 6
+    unit: "ea"
+    cost_per_unit: 1.89
+    total_cost: 11.34
+  - name: "Toasted in the panini machine, cut into 5 slices"
+    quantity: 1
+    unit: "ea"
+    cost_per_unit: 0.05
+    total_cost: 0.05
+
+method:
+  prep_notes: "Slice all of the meats very thin. To plate place prosciutto, capicola, soppressata and cheeses on a wooden board."
+  cooking_instructions: "2.) Garnishing the artichoke, cornichons and mustard. Brush the paesano bread with evo and Place in the panini machine to toaste."
+  plating_instructions: "Place the slices in the top corner of the board"
+  timing_notes: "Toast bread until golden"
+
+pricing:
+  ingredient_cost: 16.08
+  sales_price: 16.00
+  cost_percentage: 100.47
+  contribution_margin: -0.07
+
+tags:
+  - charcuterie
+  - appetizer
+  - shareable
+dietary: []
+cooking_methods:
+  - sliced
+  - toasted
+
+source:
+  image_file: "IMG_4802.jpeg"
+  date_added: "2025-06-28"
+  notes: "Premium charcuterie board with cured meats and cheeses"

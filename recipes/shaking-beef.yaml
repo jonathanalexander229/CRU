@@ -1,0 +1,57 @@
+name: "Shaking Beef"
+menu_periods:
+  - dinner
+plate_info: "Earthenware Rectangle Plate"
+status: complete
+
+ingredients:
+  - name: "Beef tips, large cubes"
+    quantity: 5
+    unit: "oz"
+    cost_per_unit: 0.61
+    total_cost: 3.05
+    notes: "Estimated cost based on total"
+  - name: "Shaking beef marinade"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Arugula, dressed in EVOO"
+    quantity: 0.25
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "White sesame seeds"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish"
+
+method:
+  prep_notes: "Marinate beef cubes, prepare spicy lemon sauce, dress arugula"
+  cooking_instructions: "Preheat cast iron skillet to near smoke point. Add oil, add beef cubes. Hard sear first side, then shake pan vigorously to sear other sides and cook to medium. Glaze with spicy lemon sauce, reduce."
+  plating_instructions: "Place dressed arugula down center of plate, place seared beef on arugula, garnish with sesame seeds."
+  timing_notes: "Cook beef to medium doneness"
+
+pricing:
+  ingredient_cost: 3.05
+  sales_price: 16.00
+  cost_percentage: 19.06
+  contribution_margin: 12.95
+
+tags:
+  - entree
+  - beef
+  - cast_iron
+dietary: []
+cooking_methods:
+  - seared
+  - cast_iron
+
+source:
+  image_file: "condensed_all_menus.html"
+  date_added: "2025-06-28"
+  notes: "Existing complete recipe from condensed menu"

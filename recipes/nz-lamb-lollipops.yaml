@@ -1,0 +1,70 @@
+name: "New Zealand Lamb Lollipops"
+menu_periods:
+  - dinner
+plate_info: "Earthenware Rectangle Plate"
+status: complete
+
+ingredients:
+  - name: "Lumina NZ lamb, french clean"
+    quantity: 1
+    unit: "ea"
+    cost_per_unit: 5.81
+    total_cost: 5.81
+    notes: "Cut in 2 bone portions - estimated cost"
+  - name: "Pistachio pesto (batch recipe)"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Arugula, dressed w EVOO, lemon juice"
+    quantity: 0.25
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Olive oil blend"
+    quantity: 1
+    unit: "as needed"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Marinade component"
+  - name: "Fresh thyme"
+    quantity: 1
+    unit: "as needed"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Marinade component"
+  - name: "Garlic, minced"
+    quantity: 1
+    unit: "as needed"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Marinade component"
+
+method:
+  prep_notes: "French clean lamb rack, prepare pistachio pesto, dress arugula"
+  cooking_instructions: "In a heated saute pan season and brown the lamb rack. Place in oven and cook to desired temperature, this item is to be served medium rare unless the customer says different."
+  plating_instructions: "Cut lamb into two chops, place the dressed arugula on the plate, cross lamb on the bed of arugula, garnish with small spoonful of pesto on cut side of lamb."
+  timing_notes: "Cook to medium rare unless requested otherwise"
+
+pricing:
+  ingredient_cost: 5.81
+  sales_price: 18.00
+  cost_percentage: 32.28
+  contribution_margin: 12.19
+
+tags:
+  - entree
+  - lamb
+  - premium
+dietary:
+  - gluten_free
+cooking_methods:
+  - seared
+  - oven_finished
+
+source:
+  image_file: "condensed_all_menus.html"
+  date_added: "2025-06-28"
+  notes: "Existing complete recipe from condensed menu"

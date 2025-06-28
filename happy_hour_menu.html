@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar - Happy Hour Recipe Cards</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffe4e1 0%, #ffd1dc 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #dc143c;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header .service-time {
+            color: #b22222;
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ff69b4;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #ff1493 0%, #dc143c 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        
+        .card-header .plate-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .ingredients {
+            margin-bottom: 20px;
+        }
+        
+        .ingredients h3 {
+            color: #dc143c;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #ff1493;
+            padding-bottom: 5px;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .ingredient-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity {
+            font-weight: bold;
+            color: #b22222;
+        }
+        
+        .method {
+            background: #fff0f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .method h3 {
+            color: #dc143c;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        
+        .method p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffe4e1;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .cost {
+            font-size: 0.9em;
+            color: #dc143c;
+        }
+        
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #228b22;
+        }
+        
+        .price::before {
+            content: "HH Price: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        
+        .regular-price {
+            font-size: 0.9em;
+            color: #888;
+            text-decoration: line-through;
+        }
+        
+        .regular-price::before {
+            content: "Regular: ";
+            font-size: 0.8em;
+        }
+
+        .happy-hour-special {
+            background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .placeholder {
+            border-left: 4px solid #ff6347;
+        }
+        
+        .placeholder .card-header {
+            background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRÙ Wine Bar - Happy Hour Menu</h1>
+            <div class="service-time">Monday - Friday | 3:00 PM - 5:30 PM</div>
+        </div>
+        
+        <div class="cards-grid">
+            <!-- Goat Cheese Beignets Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Goat Cheese Beignets</h2>
+                    <div class="plate-info">Happy Hour Special - $6</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $6 | Regular Price: $14
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components (from existing recipe)</h3>
+                        <ul class="ingredient-list">
+                            <li>Goat cheese <span class="quantity">TBD</span></li>
+                            <li>Honey <span class="quantity">TBD</span></li>
+                            <li>Cracked pepper <span class="quantity">TBD</span></li>
+                            <li>Choux pastry <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Margherita Pizza Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Margherita Pizza</h2>
+                    <div class="plate-info">Happy Hour Special - $8</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $8 | Regular Price: $18
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components (from existing recipe)</h3>
+                        <ul class="ingredient-list">
+                            <li>San marzano pizza sauce <span class="quantity">TBD</span></li>
+                            <li>Whole basil <span class="quantity">TBD</span></li>
+                            <li>Fior di latte <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fritto Misto Card -->
+            <div class="recipe-card">
+                <div class="card-header">
+                    <h2>Fritto Misto</h2>
+                    <div class="plate-info">Happy Hour Special - $6</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $6 | Regular Price: $18
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components (from existing recipe)</h3>
+                        <ul class="ingredient-list">
+                            <li>Point Judith (USA) calamari <span class="quantity">TBD</span></li>
+                            <li>Shrimp <span class="quantity">TBD</span></li>
+                            <li>Spicy san marzano marinara <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tomato & Burrata Bruschetta Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Tomato & Burrata Bruschetta</h2>
+                    <div class="plate-info">Happy Hour Special - $6</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $6
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Artisan bread <span class="quantity">TBD</span></li>
+                            <li>Fresh tomatoes <span class="quantity">TBD</span></li>
+                            <li>Burrata cheese <span class="quantity">TBD</span></li>
+                            <li>Basil <span class="quantity">TBD</span></li>
+                            <li>EVOO <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Italian Sausage Flatbread Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Italian Sausage Flatbread</h2>
+                    <div class="plate-info">Happy Hour Special - $7</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $7
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Flatbread dough <span class="quantity">TBD</span></li>
+                            <li>Italian sausage <span class="quantity">TBD</span></li>
+                            <li>Mozzarella cheese <span class="quantity">TBD</span></li>
+                            <li>Marinara sauce <span class="quantity">TBD</span></li>
+                            <li>Herbs <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ahi Tartare Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Ahi Tartare</h2>
+                    <div class="plate-info">Happy Hour Special - $8</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $8
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Ahi tuna <span class="quantity">TBD</span></li>
+                            <li>Avocado <span class="quantity">TBD</span></li>
+                            <li>Cucumber <span class="quantity">TBD</span></li>
+                            <li>Sesame oil <span class="quantity">TBD</span></li>
+                            <li>Soy sauce <span class="quantity">TBD</span></li>
+                            <li>Wonton crisps <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steamed Prince Edward Mussels Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Steamed Prince Edward Mussels</h2>
+                    <div class="plate-info">Happy Hour Special - $8</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $8
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Prince Edward mussels <span class="quantity">TBD</span></li>
+                            <li>White wine <span class="quantity">TBD</span></li>
+                            <li>Garlic <span class="quantity">TBD</span></li>
+                            <li>Shallots <span class="quantity">TBD</span></li>
+                            <li>Fresh herbs <span class="quantity">TBD</span></li>
+                            <li>Butter <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crispy Arancini Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Crispy Arancini</h2>
+                    <div class="plate-info">Happy Hour Special - $5</div>
+                </div>
+                <div class="card-body">
+                    <div class="happy-hour-special">
+                        Happy Hour Price: $5
+                    </div>
+                    <div class="ingredients">
+                        <h3>Components</h3>
+                        <ul class="ingredient-list">
+                            <li>Risotto rice <span class="quantity">TBD</span></li>
+                            <li>Mozzarella cheese <span class="quantity">TBD</span></li>
+                            <li>Breadcrumbs <span class="quantity">TBD</span></li>
+                            <li>Eggs <span class="quantity">TBD</span></li>
+                            <li>Marinara sauce <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

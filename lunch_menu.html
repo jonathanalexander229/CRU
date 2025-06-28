@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar - Lunch Recipe Cards</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e6f3ff 0%, #b3d9ff 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #1e90ff;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header .service-time {
+            color: #4169e1;
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #87ceeb;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #4682b4 0%, #1e90ff 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        
+        .card-header .plate-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .ingredients {
+            margin-bottom: 20px;
+        }
+        
+        .ingredients h3 {
+            color: #1e90ff;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #4682b4;
+            padding-bottom: 5px;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .ingredient-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity {
+            font-weight: bold;
+            color: #4169e1;
+        }
+        
+        .method {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .method h3 {
+            color: #1e90ff;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        
+        .method p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #e6f3ff;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .cost {
+            font-size: 0.9em;
+            color: #1e90ff;
+        }
+        
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #228b22;
+        }
+        
+        .price::before {
+            content: "Sales: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        
+        .margin {
+            font-size: 1.1em;
+            color: #228b22;
+            font-weight: bold;
+        }
+        
+        .margin::before {
+            content: "Margin: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        .placeholder {
+            border-left: 4px solid #ffa500;
+        }
+        
+        .placeholder .card-header {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRÙ Wine Bar - Lunch Menu</h1>
+            <div class="service-time">Friday | 11:30 AM - 3:00 PM</div>
+        </div>
+        
+        <div class="cards-grid">
+            <!-- Taste & Share Items (shared with dinner) -->
+            
+            <!-- Wagyu Meatballs Card -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Wagyu Meatballs</h2>
+                    <div class="plate-info">Lunch Special - $17</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from dinner menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>San marzano tomato basil sauce <span class="quantity">TBD</span></li>
+                            <li>Herb ricotta <span class="quantity">TBD</span></li>
+                            <li>Reggiano <span class="quantity">TBD</span></li>
+                            <li>Rustic bread <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mediterranean Flatbread Card -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Mediterranean Flatbread</h2>
+                    <div class="plate-info">Lunch Special - $16</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from dinner menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Goat cheese <span class="quantity">TBD</span></li>
+                            <li>Artichokes <span class="quantity">TBD</span></li>
+                            <li>Olives <span class="quantity">TBD</span></li>
+                            <li>Roasted peppers <span class="quantity">TBD</span></li>
+                            <li>Tomatoes <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stone Fired Pizza Section -->
+            
+            <!-- Margherita Pizza Card -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Margherita Pizza</h2>
+                    <div class="plate-info">Stone Fired - $18</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from dinner menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>San marzano pizza sauce <span class="quantity">TBD</span></li>
+                            <li>Whole basil <span class="quantity">TBD</span></li>
+                            <li>Fior di latte <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Butcher Pizza Card -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>The Butcher Pizza</h2>
+                    <div class="plate-info">Stone Fired - $20</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from dinner menu)</h3>
+                        <ul class="ingredient-list">
+                            <li>Fresh mozzarella <span class="quantity">TBD</span></li>
+                            <li>Prosciutto <span class="quantity">TBD</span></li>
+                            <li>Capicola <span class="quantity">TBD</span></li>
+                            <li>Soppressata <span class="quantity">TBD</span></li>
+                            <li>San marzano pizza sauce <span class="quantity">TBD</span></li>
+                            <li>Oregano <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Same as dinner menu recipe - details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sandwiches & Mains Section -->
+            
+            <!-- CRÙ Burger Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>CRÙ Burger</h2>
+                    <div class="plate-info">Lunch Main - Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical)</h3>
+                        <ul class="ingredient-list">
+                            <li>Wagyu beef patty <span class="quantity">TBD</span></li>
+                            <li>Brioche bun <span class="quantity">TBD</span></li>
+                            <li>Artisan cheese <span class="quantity">TBD</span></li>
+                            <li>Lettuce, tomato, onion <span class="quantity">TBD</span></li>
+                            <li>House sauce <span class="quantity">TBD</span></li>
+                            <li>Fries <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chicken Sandwich Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Chicken Sandwich</h2>
+                    <div class="plate-info">Lunch Main - Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical)</h3>
+                        <ul class="ingredient-list">
+                            <li>Grilled chicken breast <span class="quantity">TBD</span></li>
+                            <li>Artisan bread <span class="quantity">TBD</span></li>
+                            <li>Avocado <span class="quantity">TBD</span></li>
+                            <li>Bacon <span class="quantity">TBD</span></li>
+                            <li>Lettuce, tomato <span class="quantity">TBD</span></li>
+                            <li>Aioli <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lunch Salad Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>CRÙ House Salad</h2>
+                    <div class="plate-info">Lunch Main - Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical)</h3>
+                        <ul class="ingredient-list">
+                            <li>Mixed greens <span class="quantity">TBD</span></li>
+                            <li>Seasonal vegetables <span class="quantity">TBD</span></li>
+                            <li>Protein option <span class="quantity">TBD</span></li>
+                            <li>House vinaigrette <span class="quantity">TBD</span></li>
+                            <li>Artisan cheese <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta Lunch Special Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Lunch Pasta Special</h2>
+                    <div class="plate-info">Lunch Main - Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical)</h3>
+                        <ul class="ingredient-list">
+                            <li>Fresh pasta <span class="quantity">TBD</span></li>
+                            <li>Seasonal sauce <span class="quantity">TBD</span></li>
+                            <li>Protein or vegetables <span class="quantity">TBD</span></li>
+                            <li>Parmesan cheese <span class="quantity">TBD</span></li>
+                            <li>Fresh herbs <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

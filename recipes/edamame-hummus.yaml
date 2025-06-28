@@ -1,0 +1,91 @@
+name: "Edamame Hummus"
+menu_periods:
+  - dinner
+  - appetizer
+plate_info: "Yield Recipe"
+status: complete
+
+ingredients:
+  - name: "Chickpeas, drained"
+    quantity: 60
+    unit: "oz"
+    cost_per_unit: 0.02
+    total_cost: 1.20
+    notes: "Base hummus component"
+  - name: "Lemon juice"
+    quantity: 1
+    unit: "cup"
+    cost_per_unit: 0.50
+    total_cost: 0.50
+    notes: "Base hummus component"
+  - name: "Tahini"
+    quantity: 1
+    unit: "cup"
+    cost_per_unit: 2.00
+    total_cost: 2.00
+    notes: "Base hummus component"
+  - name: "Garlic cloves, chopped"
+    quantity: 3
+    unit: "ea"
+    cost_per_unit: 0.10
+    total_cost: 0.30
+    notes: "Base hummus component"
+  - name: "Olive oil blend"
+    quantity: 1.25
+    unit: "cup"
+    cost_per_unit: 1.00
+    total_cost: 1.25
+    notes: "Base hummus component"
+  - name: "Ground cumin"
+    quantity: 2
+    unit: "tsp"
+    cost_per_unit: 0.05
+    total_cost: 0.10
+    notes: "Base hummus component"
+  - name: "Water"
+    quantity: 0.5
+    unit: "cup"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Base hummus component"
+  - name: "Shelled edamame, thawed"
+    quantity: 2
+    unit: "lbs"
+    cost_per_unit: 2.00
+    total_cost: 4.00
+    notes: "Edamame addition"
+  - name: "Water (for edamame)"
+    quantity: 1.5
+    unit: "cups"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Edamame processing"
+
+method:
+  prep_notes: "This is a yield recipe for batch preparation"
+  cooking_instructions: "Place drained garbanzo beans in robot coupe. Add water, garlic, tahini & lemon until smooth paste forms. Add olive oil slowly, drizzle oil into hummus with robot coupe. Remove hummus from robot coupe. Process shelled edamame with 1.5 cups water until smooth paste forms."
+  plating_instructions: "Add edamame paste to bowl with hummus, stir with a spatula to incorporate. Season with salt & pepper and additional lemon juice to taste."
+  timing_notes: "Taste and adjust seasoning before service"
+
+pricing:
+  ingredient_cost: 9.35
+  sales_price: 13.00
+  cost_percentage: 71.92
+  contribution_margin: 3.65
+
+tags:
+  - appetizer
+  - hummus
+  - vegetarian
+  - yield_recipe
+dietary:
+  - vegetarian
+  - vegan
+  - gluten_free
+cooking_methods:
+  - processed
+
+source:
+  image_file: "condensed_all_menus.html"
+  date_added: "2025-06-28"
+  notes: "Existing complete recipe from condensed menu - batch/yield recipe"

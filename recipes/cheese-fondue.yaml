@@ -1,0 +1,80 @@
+name: "Cheese Fondue"
+menu_periods:
+  - dinner
+  - appetizer
+plate_info: "Earthenware bowl and round staub pot w/candle"
+status: complete
+
+ingredients:
+  - name: "Cheese fondue (see recipe)"
+    quantity: 6
+    unit: "oz"
+    cost_per_unit: 0.26
+    total_cost: 1.50
+  - name: "Truffle, shaved"
+    quantity: 0.1
+    unit: "oz"
+    cost_per_unit: 7.81
+    total_cost: 0.78
+  - name: "Apple, quartered"
+    quantity: 0.25
+    unit: "ea"
+    cost_per_unit: 0.95
+    total_cost: 0.24
+  - name: "Butternut squash, roasted"
+    quantity: 4
+    unit: "pcs"
+    cost_per_unit: 0.10
+    total_cost: 0.40
+  - name: "Pear, quartered"
+    quantity: 0.25
+    unit: "ea"
+    cost_per_unit: 1.50
+    total_cost: 0.38
+  - name: "Brussels sprouts, quartered, roasted"
+    quantity: 4
+    unit: "pcs"
+    cost_per_unit: 0.11
+    total_cost: 0.44
+  - name: "Paesano bread, cut 1/2 inch, toasted"
+    quantity: 0.1
+    unit: "ea"
+    cost_per_unit: 3.30
+    total_cost: 0.33
+  - name: "Shishito peppers, roasted"
+    quantity: 6
+    unit: "pcs"
+    cost_per_unit: 0.15
+    total_cost: 0.90
+  - name: "EVOO"
+    quantity: 0.15
+    unit: "oz"
+    cost_per_unit: 0.27
+    total_cost: 0.04
+
+method:
+  prep_notes: "Prepare all vegetables by roasting. Quarter apples and pears."
+  cooking_instructions: "In a small pan heat enough fondue mix to fill the staub pot. Top with shaved truffles, little drizzle of EVOO & little chopped parsley."
+  plating_instructions: "Place staube on liner on the oval board and arrange bread, fruit and veggies around. Garnish with the toasted bread, brussels, squash, apples, and pears. Light candle before service."
+  timing_notes: "Light candle before service"
+
+pricing:
+  ingredient_cost: 5.01
+  sales_price: 16.00
+  cost_percentage: 31.31
+  contribution_margin: 10.99
+
+tags:
+  - appetizer
+  - shareable
+  - interactive
+dietary:
+  - vegetarian
+cooking_methods:
+  - heated
+  - roasted
+
+source:
+  image_file: "IMG_4803.jpeg"
+  date_added: "2025-06-28"
+  notes: "Interactive fondue experience with roasted vegetables and fruit"

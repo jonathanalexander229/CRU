@@ -1,0 +1,90 @@
+name: "Burrata & Roasted Tomatoes"
+menu_periods:
+  - dinner
+  - appetizer
+plate_info: "Earthenware Bowl"
+status: complete
+
+ingredients:
+  - name: "Paesano bread, sliced 1 inch, oiled, toasted"
+    quantity: 0.5
+    unit: "pc"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Burrata cheese"
+    quantity: 0.5
+    unit: "ball"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Red wine ripened tomatoes"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Red heirloom cherry tomatoes"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "EVOO"
+    quantity: 2
+    unit: "tsp"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Baby arugula"
+    quantity: 0.5
+    unit: "cup"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Basil, torn"
+    quantity: 2
+    unit: "leaves"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "S&P"
+    quantity: 1
+    unit: "tt"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Balsamic reduction"
+    quantity: 0.25
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Maldon salt"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+
+method:
+  prep_notes: "Prepare balsamic reduction ahead of time"
+  cooking_instructions: "Place 1/2 of ball of burrata with liquid in center of bowl. Toss tomatoes in small amount of EVOO and s&p. Garnish in a line over the top of burrata towards the 9 and 3 o'clock positions."
+  plating_instructions: "Garnish over tomatoes, tear basil over tomatoes, positions of the bowl, drizzle with EVOO & balsamic reduction, tear basil over everything, finish with a garnish with half of a bias cut piece of toasted ciabatta at 12 o'clock in the bowl, finish with a pinch of maldon salt."
+  timing_notes: "Serve immediately after plating"
+
+pricing:
+  ingredient_cost: 0.00
+  sales_price: 14.00
+  cost_percentage: 0.00
+  contribution_margin: 14.00
+
+tags:
+  - appetizer
+  - burrata
+  - italian
+dietary:
+  - vegetarian
+cooking_methods:
+  - roasted
+  - toasted
+
+source:
+  image_file: "IMG_4806.jpeg"
+  date_added: "2025-06-28"
+  notes: "Burrata with roasted tomatoes - costs not filled in image"

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar - Brunch Recipe Cards</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe4b5 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #8b4513;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header .service-time {
+            color: #d2691e;
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f4a460;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #daa520 0%, #b8860b 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        
+        .card-header .plate-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .ingredients {
+            margin-bottom: 20px;
+        }
+        
+        .ingredients h3 {
+            color: #8b4513;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #daa520;
+            padding-bottom: 5px;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .ingredient-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity {
+            font-weight: bold;
+            color: #d2691e;
+        }
+        
+        .method {
+            background: #fef8f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .method h3 {
+            color: #8b4513;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        
+        .method p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f5f5dc;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .cost {
+            font-size: 0.9em;
+            color: #8b4513;
+        }
+        
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #228b22;
+        }
+        
+        .price::before {
+            content: "Sales: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        
+        .margin {
+            font-size: 1.1em;
+            color: #228b22;
+            font-weight: bold;
+        }
+        
+        .margin::before {
+            content: "Margin: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        .placeholder {
+            border-left: 4px solid #ff8c00;
+        }
+        
+        .placeholder .card-header {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff7f50 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRÙ Wine Bar - Brunch Menu</h1>
+            <div class="service-time">Saturday & Sunday | 10:30 AM - 3:00 PM</div>
+        </div>
+        
+        <div class="cards-grid">
+            <!-- Crab Cake Benedict Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Crab Cake Benedict</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from reviews)</h3>
+                        <ul class="ingredient-list">
+                            <li>Crab cakes <span class="quantity">TBD</span></li>
+                            <li>English muffin <span class="quantity">TBD</span></li>
+                            <li>Poached eggs <span class="quantity">TBD</span></li>
+                            <li>Hollandaise sauce <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steak & Eggs Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Steak & Eggs</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from reviews)</h3>
+                        <ul class="ingredient-list">
+                            <li>Bistro steak <span class="quantity">TBD</span></li>
+                            <li>Eggs <span class="quantity">TBD</span></li>
+                            <li>Breakfast potatoes <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avocado Toast & Shrimp Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Avocado Toast & Shrimp</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from reviews)</h3>
+                        <ul class="ingredient-list">
+                            <li>Avocado <span class="quantity">TBD</span></li>
+                            <li>Artisan bread <span class="quantity">TBD</span></li>
+                            <li>Shrimp <span class="quantity">TBD</span></li>
+                            <li>Seasonings <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shrimp and Grits Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Shrimp and Grits</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from reviews)</h3>
+                        <ul class="ingredient-list">
+                            <li>Shrimp <span class="quantity">TBD</span></li>
+                            <li>Cheese grits <span class="quantity">TBD</span></li>
+                            <li>Andouille sausage <span class="quantity">TBD</span></li>
+                            <li>Creole seasonings <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salmon Board Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Salmon Board</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (from reviews)</h3>
+                        <ul class="ingredient-list">
+                            <li>Smoked salmon <span class="quantity">TBD</span></li>
+                            <li>Bagels or bread <span class="quantity">TBD</span></li>
+                            <li>Capers <span class="quantity">TBD</span></li>
+                            <li>Cream cheese <span class="quantity">TBD</span></li>
+                            <li>Red onion <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brunch Pizza Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Brunch Pizza</h2>
+                    <div class="plate-info">Stone Fired - Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical brunch pizza)</h3>
+                        <ul class="ingredient-list">
+                            <li>Pizza dough <span class="quantity">TBD</span></li>
+                            <li>Eggs <span class="quantity">TBD</span></li>
+                            <li>Bacon or sausage <span class="quantity">TBD</span></li>
+                            <li>Cheese <span class="quantity">TBD</span></li>
+                            <li>Hollandaise or cream sauce <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- French Toast Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>French Toast</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical)</h3>
+                        <ul class="ingredient-list">
+                            <li>Brioche or artisan bread <span class="quantity">TBD</span></li>
+                            <li>Egg custard <span class="quantity">TBD</span></li>
+                            <li>Seasonal fruit <span class="quantity">TBD</span></li>
+                            <li>Maple syrup <span class="quantity">TBD</span></li>
+                            <li>Butter <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakfast Flatbread Card - PLACEHOLDER -->
+            <div class="recipe-card placeholder">
+                <div class="card-header">
+                    <h2>Breakfast Flatbread</h2>
+                    <div class="plate-info">Recipe Details Needed</div>
+                </div>
+                <div class="card-body">
+                    <div class="ingredients">
+                        <h3>Components (typical)</h3>
+                        <ul class="ingredient-list">
+                            <li>Flatbread dough <span class="quantity">TBD</span></li>
+                            <li>Breakfast meats <span class="quantity">TBD</span></li>
+                            <li>Eggs <span class="quantity">TBD</span></li>
+                            <li>Cheese <span class="quantity">TBD</span></li>
+                            <li>Herbs <span class="quantity">TBD</span></li>
+                        </ul>
+                    </div>
+                    <div class="method">
+                        <h3>Method</h3>
+                        <p><em>Recipe details to be added</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

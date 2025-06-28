@@ -1,0 +1,60 @@
+name: "Goat Cheese Beignets"
+menu_periods:
+  - dinner
+  - happy_hour
+plate_info: "Large coupe bowl"
+status: complete
+
+ingredients:
+  - name: "Goat cheese beignets - 4 - 1oz balls"
+    quantity: 4
+    unit: "oz"
+    cost_per_unit: 0.50
+    total_cost: 2.00
+  - name: "Tempura batter"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.20
+    total_cost: 0.40
+  - name: "Honey (garnish)"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.42
+    total_cost: 0.42
+  - name: "Black pepper, fresh, cracked"
+    quantity: 0.25
+    unit: "oz"
+    cost_per_unit: 0.36
+    total_cost: 0.09
+  - name: "Kinnikinnick tempura mix (6-5lb bags)"
+    quantity: 1
+    unit: "portion"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Japanese style tempura batter mix"
+
+method:
+  prep_notes: "Drop 4 balls into tempura batter, make sure they are completely coated. Use a fork to remove each, scraping most batter off scraping the back of the fork on the 1/6 pan."
+  cooking_instructions: "Gently lay each ball in the fry oil. Fry till golden brown. Put 3/4 of the honey in the bottom of the bowl and arrange the balls in a pyramid in the center."
+  plating_instructions: "Then drizzle with remaining honey. Freshly crack the black pepper before leaving the kitchen line. The final product should be the size of a golf ball."
+  timing_notes: "Fry until golden brown"
+
+pricing:
+  ingredient_cost: 2.91
+  sales_price: 13.00
+  cost_percentage: 22.38
+  contribution_margin: 10.09
+
+tags:
+  - appetizer
+  - fried
+  - cheese
+dietary:
+  - vegetarian
+cooking_methods:
+  - deep_fried
+
+source:
+  image_file: "IMG_4804.jpeg"
+  date_added: "2025-06-28"
+  notes: "Fried goat cheese beignets with honey and cracked pepper"

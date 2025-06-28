@@ -1,0 +1,87 @@
+name: "Pan Seared Salmon"
+menu_periods:
+  - dinner
+plate_info: "12 inch Round Bowl"
+status: complete
+
+ingredients:
+  - name: "Salmon Filet"
+    quantity: 7
+    unit: "oz"
+    cost_per_unit: 0.95
+    total_cost: 6.62
+    notes: "Estimated cost based on total"
+  - name: "Haricot vert, blanched"
+    quantity: 9
+    unit: "pc"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Campari tomatoes, roasted"
+    quantity: 2
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "White wine"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Lemon juice"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Lemon wheels, sliced thin"
+    quantity: 1
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish and sauce"
+  - name: "Butter, softened"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Dill, chopped"
+    quantity: 1
+    unit: "tt"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+
+method:
+  prep_notes: "Blanch green beans, roast tomatoes on vine"
+  cooking_instructions: "Season the salmon with salt and pepper. In a hot pan sear until golden brown. Remove from the pan and place on a sizzle plate and finish in the oven. Heat green beans with small amount of butter and S&P. Make the sauce in the fish pan by adding the white wine, lemon juice, lemon wheel, dill & s&p, reduce and incorporate the butter."
+  plating_instructions: "Plate green beans in center of bowl, place salmon on top of the beans, pour sauce over the fish. Garnish the salmon with the lemon wheel, roasted tomatoes & microgreens."
+  timing_notes: "Don't overcook salmon"
+
+pricing:
+  ingredient_cost: 6.62
+  sales_price: 30.00
+  cost_percentage: 22.07
+  contribution_margin: 23.38
+
+tags:
+  - entree
+  - seafood
+  - salmon
+dietary:
+  - gluten_free
+cooking_methods:
+  - pan_seared
+  - oven_finished
+
+source:
+  image_file: "condensed_all_menus.html"
+  date_added: "2025-06-28"
+  notes: "Existing complete recipe from condensed menu"

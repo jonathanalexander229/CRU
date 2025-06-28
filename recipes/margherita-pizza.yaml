@@ -1,0 +1,65 @@
+name: "Margherita Pizza"
+menu_periods:
+  - dinner
+  - lunch
+  - happy_hour
+plate_info: "Pizza plate"
+status: complete
+
+ingredients:
+  - name: "Pizza dough 8 oz each"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.18
+    total_cost: 0.18
+  - name: "Fior di latte Polly-O"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.29
+    total_cost: 0.58
+  - name: "Raw pizza sauce"
+    quantity: 2.5
+    unit: "oz"
+    cost_per_unit: 0.06
+    total_cost: 0.15
+  - name: "Basil, whole leaves"
+    quantity: 4
+    unit: "leaves"
+    cost_per_unit: 0.05
+    total_cost: 0.20
+  - name: "Sea salt"
+    quantity: 1
+    unit: "ea"
+    cost_per_unit: 0.05
+    total_cost: 0.05
+  - name: "EVO"
+    quantity: 1
+    unit: "tsp"
+    cost_per_unit: 0.07
+    total_cost: 0.07
+
+method:
+  prep_notes: "Preheat oven to 500 degrees"
+  cooking_instructions: "1.) Stretch the pizza dough. 2.) Drizzle the pizza sauce over the pizza dough. Place the whole basil leaves on the sauce. 3.) Arrange the pieces of fresh fior di latte polly-o mozzarella on the sauce and basil leaves. 4.) Bake at 500 degrees until deep golden brown."
+  plating_instructions: "5.) Remove and cut into eight pieces. 6.) Brush the edges with EVOO, drizzle the top of the pizza with a little evo and sea salt."
+  timing_notes: "Bake until deep golden brown"
+
+pricing:
+  ingredient_cost: 1.23
+  sales_price: 15.00
+  cost_percentage: 8.20
+  contribution_margin: 13.77
+
+tags:
+  - pizza
+  - stone_fired
+dietary:
+  - vegetarian
+cooking_methods:
+  - stone_fired
+  - baked
+
+source:
+  image_file: "IMG_4807.jpeg"
+  date_added: "2025-06-28"
+  notes: "Classic margherita pizza with detailed assembly instructions"

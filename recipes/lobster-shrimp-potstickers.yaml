@@ -1,0 +1,65 @@
+name: "Lobster & Shrimp Potstickers"
+menu_periods:
+  - dinner
+  - appetizer
+plate_info: "Small plate"
+status: complete
+
+ingredients:
+  - name: "Lobster & Shrimp potstickers"
+    quantity: 6
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Main component - costs from IMG_4813"
+  - name: "Sweet and sour sauce"
+    quantity: 1.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Fresno chilies"
+    quantity: 2
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish"
+  - name: "Sweet chile ponzu"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish"
+
+method:
+  prep_notes: "Prepare sweet and sour sauce and sweet chile ponzu"
+  cooking_instructions: "Making the potstickers, blanch them in boiling water, add to the sticky sweet and sour sauce."
+  plating_instructions: "Spoon 1/2 oz sauce on the plate, then place dumplings on top and garnish with microgreens and fresno chilies."
+  timing_notes: "Serve immediately while hot"
+
+pricing:
+  ingredient_cost: 0.00
+  sales_price: 17.00
+  cost_percentage: 0.00
+  contribution_margin: 17.00
+
+tags:
+  - appetizer
+  - dumplings
+  - seafood
+  - asian_fusion
+dietary: []
+cooking_methods:
+  - blanched
+  - steamed
+
+source:
+  image_file: "IMG_4813.jpeg"
+  date_added: "2025-06-28"
+  notes: "Method visible in image - need to extract detailed costs"

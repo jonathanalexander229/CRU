@@ -1,0 +1,71 @@
+name: "Beef Tenderloin"
+menu_periods:
+  - dinner
+plate_info: "Cast iron presentation"
+status: complete
+
+ingredients:
+  - name: "Beef tenderloin"
+    quantity: 8
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Main protein - costs from IMG_4814"
+  - name: "Asparagus"
+    quantity: 6
+    unit: "spears"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Vegetable component"
+  - name: "Butter"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "For basting"
+  - name: "Fresh thyme"
+    quantity: 2
+    unit: "sprigs"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Herb garnish"
+  - name: "Coarse salt"
+    quantity: 1
+    unit: "tt"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Seasoning"
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish"
+
+method:
+  prep_notes: "Bring beef to room temperature, prepare asparagus"
+  cooking_instructions: "Heat cast iron pan over high heat. Sear meat on both sides, add butter to season with coarse salt and thyme."
+  plating_instructions: "Spoon butter over the asparagus and beef, garnish with thyme sprig and microgreens."
+  timing_notes: "Cook to desired doneness"
+
+pricing:
+  ingredient_cost: 0.00
+  sales_price: 0.00
+  cost_percentage: 0.00
+  contribution_margin: 0.00
+
+tags:
+  - entree
+  - beef
+  - premium
+  - cast_iron
+dietary:
+  - gluten_free
+cooking_methods:
+  - seared
+  - cast_iron
+
+source:
+  image_file: "IMG_4814.jpeg"
+  date_added: "2025-06-28"
+  notes: "Method visible in image - need to extract detailed costs and pricing"

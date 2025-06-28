@@ -1,0 +1,83 @@
+name: "Wagyu Meatballs"
+menu_periods:
+  - dinner
+  - lunch
+plate_info: "Plate information from recipe card"
+status: complete
+
+ingredients:
+  - name: "Paesano Bread"
+    quantity: 2
+    unit: "slices"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Costs from IMG_4812 - need to extract specific values"
+  - name: "Basil Pesto"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Parmesan Cheese"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "San Marzano sauce"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish"
+  - name: "Wagyu beef meatballs"
+    quantity: 4
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Main component"
+  - name: "Herb ricotta"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "From menu description"
+  - name: "Reggiano cheese"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "From menu description"
+
+method:
+  prep_notes: "Prepare wagyu meatballs, herb ricotta, and san marzano sauce"
+  cooking_instructions: "Heat meatballs in san marzano sauce. Toast paesano bread."
+  plating_instructions: "Plate meatballs with sauce, garnish with herb ricotta, reggiano, and microgreens. Serve with toasted bread."
+  timing_notes: "Serve hot"
+
+pricing:
+  ingredient_cost: 0.00
+  sales_price: 17.00
+  cost_percentage: 0.00
+  contribution_margin: 17.00
+
+tags:
+  - entree
+  - meatballs
+  - wagyu
+  - italian
+dietary: []
+cooking_methods:
+  - braised
+  - toasted
+
+source:
+  image_file: "IMG_4812.jpeg"
+  date_added: "2025-06-28"
+  notes: "Need to extract detailed costs from image - recipe structure visible"

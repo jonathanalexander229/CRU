@@ -1,0 +1,80 @@
+name: "Pear & Gorgonzola Pizza"
+menu_periods:
+  - dinner
+  - lunch
+plate_info: "Pizza plate"
+status: complete
+
+ingredients:
+  - name: "Pizza dough 8 oz each"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.18
+    total_cost: 0.18
+  - name: "Olive oil"
+    quantity: 1
+    unit: "tbsp"
+    cost_per_unit: 0.07
+    total_cost: 0.07
+  - name: "Caramelized onion (see recipe)"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.10
+    total_cost: 0.10
+  - name: "Pear, 8 thin slices, 1/4 of a pear"
+    quantity: 0.25
+    unit: "each"
+    cost_per_unit: 1.50
+    total_cost: 0.38
+  - name: "Shredded mozzarella Polly-O"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.29
+    total_cost: 0.58
+  - name: "Basil, torn"
+    quantity: 0.25
+    unit: "oz"
+    cost_per_unit: 0.50
+    total_cost: 0.13
+  - name: "Parmesan, shredded"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.60
+    total_cost: 0.30
+  - name: "Gorgonzola"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 1.20
+    total_cost: 0.60
+  - name: "Honey, pure"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.25
+    total_cost: 0.13
+
+method:
+  prep_notes: "Prepare caramelized onions ahead of time"
+  cooking_instructions: "1. Stretch the dough. 2. Brush with olive oil. 3. Add the caramelized onions, mozzarella, pears, gorgonzola, parmesan, in this order. 4. Cook in the oven till golden brown."
+  plating_instructions: "5. Remove and brush the pizza crust with olive oil. 6. Garnish with a drizzle of honey and torn basil."
+  timing_notes: "Cook until golden brown"
+
+pricing:
+  ingredient_cost: 2.21
+  sales_price: 17.00
+  cost_percentage: 12.97
+  contribution_margin: 14.80
+
+tags:
+  - pizza
+  - stone_fired
+  - gourmet
+dietary:
+  - vegetarian
+cooking_methods:
+  - stone_fired
+  - baked
+
+source:
+  image_file: "IMG_4809.jpeg"
+  date_added: "2025-06-28"
+  notes: "Sweet and savory pizza with pears and gorgonzola"

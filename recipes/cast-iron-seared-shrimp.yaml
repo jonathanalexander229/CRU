@@ -1,0 +1,88 @@
+name: "Cast Iron Seared Shrimp"
+menu_periods:
+  - dinner
+plate_info: "12 inch Round Bowl"
+status: complete
+
+ingredients:
+  - name: "Red Argentine Shrimp (16-20)"
+    quantity: 0.3
+    unit: "lb"
+    cost_per_unit: 18.63
+    total_cost: 5.59
+    notes: "Estimated cost based on total"
+  - name: "Spinach Parmesan Risotto"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Yellow cherry tomatoes"
+    quantity: 4
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "White wine"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Lemon juice"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Garlic, minced"
+    quantity: 0.5
+    unit: "tsp"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Butter, softened"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Sauce component"
+  - name: "Basil, chiffonade"
+    quantity: 1
+    unit: "leaf"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Garnish"
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+
+method:
+  prep_notes: "Prepare risotto, have sauce ingredients ready"
+  cooking_instructions: "Sear shrimp in cast iron skillet until seared, rotate begin making sauce. Heat olive oil in a sauté pan, add garlic and sauté for 30 seconds, add yellow tomatoes, lemon juice, white wine, salt and pepper. Reduce to sauce consistency. Add butter, and incorporate."
+  plating_instructions: "Plate risotto in the center of a coupe bowl and arrange shrimp around risotto. Spoon sauce on and around the shrimp, garnish with microgreens."
+  timing_notes: "Don't overcook shrimp"
+
+pricing:
+  ingredient_cost: 5.59
+  sales_price: 32.00
+  cost_percentage: 17.47
+  contribution_margin: 26.41
+
+tags:
+  - entree
+  - seafood
+  - cast_iron
+  - premium
+dietary:
+  - gluten_free
+cooking_methods:
+  - seared
+  - cast_iron
+
+source:
+  image_file: "condensed_all_menus.html"
+  date_added: "2025-06-28"
+  notes: "Existing complete recipe from condensed menu"

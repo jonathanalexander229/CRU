@@ -1,0 +1,76 @@
+name: "Tomato Bruschetta"
+menu_periods:
+  - dinner
+  - lunch
+  - appetizer
+plate_info: "Wooden Board or Earthenware Rectangle"
+status: complete
+
+ingredients:
+  - name: "Paesano bread, cut 1 inch thick, oiled, toasted"
+    quantity: 1
+    unit: "pc"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Garlic confit, chopped w oil"
+    quantity: 1
+    unit: "tbsp"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Heirloom cherry tomatoes, chopped small"
+    quantity: 1
+    unit: "cup"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Burrata cheese, torn"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "EVOO"
+    quantity: 2
+    unit: "tsp"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Basil leaves, torn"
+    quantity: 2
+    unit: "ea"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "S&P"
+    quantity: 1
+    unit: "tt"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Sea salt"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+
+method:
+  prep_notes: "Prepare garlic confit ahead of time"
+  cooking_instructions: "Spoon garlic confit and it's oil onto toasted bread, cut in the middle on the bias. Toss chopped tomatoes w EVOO, chopped basil & s&p. Let marinate at room temp for 5 min."
+  plating_instructions: "Spoon tomatoes and small amount of the liquid over bread. Garnish with the torn burrata, garnish it with sea salt, cracked pepper, small drizzle of EVOO and a little more torn basil."
+  timing_notes: "Let tomatoes marinate 5 minutes at room temperature"
+
+pricing:
+  ingredient_cost: 0.00
+  sales_price: 14.00
+  cost_percentage: 0.00
+  contribution_margin: 14.00
+
+tags:
+  - bruschetta
+  - appetizer
+  - italian
+dietary:
+  - vegetarian
+cooking_methods:
+  - toasted
+  - marinated
+
+source:
+  image_file: "IMG_4805.jpeg"
+  date_added: "2025-06-28"
+  notes: "Classic tomato bruschetta with burrata cheese - costs not filled in image"

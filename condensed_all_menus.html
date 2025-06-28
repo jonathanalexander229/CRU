@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar - Complete Recipe Guide</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            margin: 0;
+            padding: 8px;
+            font-size: 9px;
+            line-height: 1.1;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin: 0 0 4px 0;
+        }
+        
+        .menus-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 2fr;
+            gap: 6px;
+            height: calc(100vh - 60px);
+            align-items: start;
+        }
+        
+        .menu-section {
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 6px;
+            overflow-y: auto;
+        }
+        
+        .brunch { border-top: 3px solid #daa520; }
+        .lunch { border-top: 3px solid #4682b4; }
+        .happy-hour { border-top: 3px solid #ff1493; }
+        .dinner { border-top: 3px solid #667eea; }
+        
+        .menu-header {
+            margin-bottom: 6px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            padding: 2px 0;
+        }
+        
+        .menu-title {
+            font-size: 1.0em;
+            font-weight: bold;
+            margin: 0 0 1px 0;
+        }
+        
+        .brunch .menu-title { color: #daa520; }
+        .lunch .menu-title { color: #4682b4; }
+        .happy-hour .menu-title { color: #ff1493; }
+        .dinner .menu-title { color: #667eea; }
+        
+        .menu-hours {
+            font-size: 0.75em;
+            color: #6c757d;
+            margin: 0;
+        }
+        
+        .dinner .menu-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+        
+        .recipe-item {
+            border: 1px solid #e9ecef;
+            border-radius: 2px;
+            padding: 4px;
+            margin-bottom: 4px;
+            background: #f8f9fa;
+        }
+        
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .recipe-name {
+            font-weight: bold;
+            font-size: 0.8em;
+            line-height: 1.0;
+            flex: 1;
+            margin-right: 2px;
+        }
+        
+        .recipe-price {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 0.7em;
+            white-space: nowrap;
+        }
+        
+        .happy-hour .recipe-price {
+            color: #dc3545;
+        }
+        
+        .ingredients {
+            margin-bottom: 1px;
+        }
+        
+        .ingredients-title {
+            font-weight: bold;
+            font-size: 0.65em;
+            color: #495057;
+            margin-bottom: 0px;
+        }
+        
+        .ingredient-item {
+            font-size: 0.6em;
+            margin-bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 1.1;
+        }
+        
+        .ingredient-name {
+            flex: 1;
+            margin-right: 2px;
+        }
+        
+        .ingredient-qty {
+            font-weight: bold;
+            color: #e74c3c;
+            white-space: nowrap;
+            font-size: 0.9em;
+        }
+        
+        .method {
+            background: #ffffff;
+            padding: 1px;
+            border-radius: 1px;
+            border-left: 2px solid #17a2b8;
+            margin-top: 1px;
+        }
+        
+        .method-title {
+            font-weight: bold;
+            font-size: 0.65em;
+            color: #495057;
+            margin-bottom: 0px;
+        }
+        
+        .method-text {
+            font-size: 0.6em;
+            color: #555;
+            line-height: 1.1;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6em;
+            margin-top: 1px;
+            padding-top: 1px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .cost { color: #6c757d; }
+        .sales { color: #28a745; font-weight: bold; }
+        .margin { color: #17a2b8; font-weight: bold; }
+        
+        .placeholder {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+        
+        .placeholder .method-text {
+            font-style: italic;
+            color: #856404;
+        }
+        
+        @media print {
+            body { font-size: 7px; }
+            .menus-container { gap: 3px; }
+        }
+        
+        @media (max-width: 1400px) {
+            .menus-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .menus-container {
+                grid-template-columns: 1fr;
+            }
+            .dinner .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRÙ Wine Bar - Complete Recipe Guide</h1>
+        </div>
+        
+        <div class="menus-container">
+            <!-- Brunch Menu -->
+            <div class="menu-section brunch">
+                <div class="menu-header">
+                    <h2 class="menu-title">🌅 Brunch</h2>
+                    <p class="menu-hours">Sat-Sun | 10:30AM-3PM</p>
+                </div>
+                
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">French Toast</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Brioche bread</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Egg custard</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Seasonal fruit</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Maple syrup</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Brunch Pizza</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Pizza dough</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Eggs, bacon</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Hollandaise sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Breakfast Flatbread</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Flatbread dough</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Breakfast meats, eggs</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Cheese, herbs</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Crab Cake Benedict</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Crab cakes</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">English muffin</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Poached eggs</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Hollandaise sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Steak & Eggs</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Bistro steak</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Eggs</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Breakfast potatoes</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Avocado Toast & Shrimp</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Avocado</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Artisan bread</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Shrimp</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Shrimp and Grits</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Shrimp</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Cheese grits</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Andouille sausage</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Salmon Board</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Smoked salmon</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Bagels</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Capers</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Cream cheese</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lunch Menu -->
+            <div class="menu-section lunch">
+                <div class="menu-header">
+                    <h2 class="menu-title">🌞 Lunch</h2>
+                    <p class="menu-hours">Fri | 11:30AM-3PM</p>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Tomato & Burrata Bruschetta</div>
+                        <div class="recipe-price">$6</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Artisan bread</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Fresh tomatoes</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Burrata cheese, basil</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Italian Sausage Flatbread</div>
+                        <div class="recipe-price">$7</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Flatbread dough</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Italian sausage</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Mozzarella, marinara</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Steamed Prince Edward Mussels</div>
+                        <div class="recipe-price">$8</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Prince Edward mussels</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">White wine, garlic</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Shallots, herbs, butter</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Chicken Sandwich</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Grilled chicken breast</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Avocado, bacon</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Lettuce, tomato, aioli</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Lunch Pasta Special</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Fresh pasta</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Seasonal sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Parmesan, herbs</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Wagyu Meatballs</div>
+                        <div class="recipe-price">$17</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">San marzano tomato basil sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Herb ricotta</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Reggiano</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Rustic bread</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Mediterranean Flatbread</div>
+                        <div class="recipe-price">$16</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Goat cheese</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Artichokes</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Olives</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Roasted peppers</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Margherita Pizza</div>
+                        <div class="recipe-price">$18</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">San marzano pizza sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Whole basil</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Fior di latte</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">CRÙ Burger</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Wagyu beef patty</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Brioche bun</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Artisan cheese</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Fries</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">CRÙ House Salad</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Mixed greens</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Seasonal vegetables</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">House vinaigrette</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Happy Hour Menu -->
+            <div class="menu-section happy-hour">
+                <div class="menu-header">
+                    <h2 class="menu-title">🍷 Happy Hour</h2>
+                    <p class="menu-hours">Mon-Fri | 3-5:30PM</p>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Goat Cheese Beignets</div>
+                        <div class="recipe-price">$6 (reg $14)</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Goat cheese</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Honey</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Cracked pepper</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Choux pastry</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Margherita Pizza</div>
+                        <div class="recipe-price">$8 (reg $18)</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">San marzano pizza sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Whole basil</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Fior di latte</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Fritto Misto</div>
+                        <div class="recipe-price">$6 (reg $18)</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Point Judith calamari</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Shrimp</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Spicy san marzano marinara</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Ahi Tartare</div>
+                        <div class="recipe-price">$8</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Ahi tuna</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Avocado</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Wonton crisps</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+
+                <div class="recipe-item placeholder">
+                    <div class="recipe-header">
+                        <div class="recipe-name">Crispy Arancini</div>
+                        <div class="recipe-price">$5</div>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredients-title">Ingredients:</div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Risotto rice</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Mozzarella cheese</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                        <div class="ingredient-item">
+                            <span class="ingredient-name">Marinara sauce</span>
+                            <span class="ingredient-qty">TBD</span>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="method-title">Method:</div>
+                        <div class="method-text">Recipe details to be added</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dinner Menu -->
+            <div class="menu-section dinner">
+                <div class="menu-header">
+                    <h2 class="menu-title">🌙 Dinner</h2>
+                    <p class="menu-hours">Daily | 3PM-10:30/11:30PM</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Beet Salad</div>
+                            <div class="recipe-price">$15</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Gold beets, roasted & wedged</span>
+                                <span class="ingredient-qty">3 pc</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Candystripe beets</span>
+                                <span class="ingredient-qty">4 pc</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Haricot verts, blanched</span>
+                                <span class="ingredient-qty">9 pc</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Goat cheese</span>
+                                <span class="ingredient-qty">garnish</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">EVOO, lemon juice, torn basil</span>
+                                <span class="ingredient-qty">dressing</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Toss green beans and beets with EVOO, lemon juice, torn basil & S&P. Plate in bowl, crumble goat cheese over salad. Garnish with chopped parsley and microgreens.</div>
+                        </div>
+                        <div class="pricing">
+                            <span class="cost">Cost: $2.55</span>
+                            <span class="sales">Sales: $15.00</span>
+                            <span class="margin">Margin: $12.45</span>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Shaking Beef</div>
+                            <div class="recipe-price">$16</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Beef tips, large cubes</span>
+                                <span class="ingredient-qty">5 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Shaking beef marinade</span>
+                                <span class="ingredient-qty">3 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Arugula, dressed in EVOO</span>
+                                <span class="ingredient-qty">0.25 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">White sesame seeds</span>
+                                <span class="ingredient-qty">garnish</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Preheat cast iron skillet to near smoke point. Add oil, add beef cubes. Hard sear first side, then shake pan vigorously to sear other sides and cook to medium. Glaze with spicy lemon sauce, reduce. Place dressed arugula down center of plate, place seared beef on arugula, garnish with sesame seeds.</div>
+                        </div>
+                        <div class="pricing">
+                            <span class="cost">Cost: $3.05</span>
+                            <span class="sales">Sales: $16.00</span>
+                            <span class="margin">Margin: $12.95</span>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Cast Iron Seared Shrimp</div>
+                            <div class="recipe-price">$32</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Red Argentine Shrimp (16-20)</span>
+                                <span class="ingredient-qty">0.3 lb</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Spinach Parmesan Risotto</span>
+                                <span class="ingredient-qty">3 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Yellow cherry tomatoes</span>
+                                <span class="ingredient-qty">4 ea</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">White wine, lemon, garlic, butter</span>
+                                <span class="ingredient-qty">sauce</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Sear shrimp in cast iron skillet. Make sauce with white wine, lemon, garlic, butter. Plate risotto in center, arrange shrimp around, spoon sauce over.</div>
+                        </div>
+                        <div class="pricing">
+                            <span class="cost">Cost: $5.59</span>
+                            <span class="sales">Sales: $32.00</span>
+                            <span class="margin">Margin: $26.41</span>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">New Zealand Lamb Lollipops</div>
+                            <div class="recipe-price">$17</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Lumina NZ lamb, french clean</span>
+                                <span class="ingredient-qty">1 ea</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Pistachio pesto</span>
+                                <span class="ingredient-qty">1 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Arugula, dressed</span>
+                                <span class="ingredient-qty">0.25 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Olive oil, thyme, garlic</span>
+                                <span class="ingredient-qty">marinade</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Season and brown lamb rack in heated pan. Oven cook to medium rare. Cut into chops, plate on dressed arugula, garnish with pesto.</div>
+                        </div>
+                        <div class="pricing">
+                            <span class="cost">Cost: $5.81</span>
+                            <span class="sales">Sales: $18.00</span>
+                            <span class="margin">Margin: $12.19</span>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Pan Seared Salmon</div>
+                            <div class="recipe-price">$30</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Salmon Filet</span>
+                                <span class="ingredient-qty">7 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Haricot vert, blanched</span>
+                                <span class="ingredient-qty">9 pc</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Campari tomatoes, roasted</span>
+                                <span class="ingredient-qty">2 ea</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">White wine, lemon, dill, butter</span>
+                                <span class="ingredient-qty">sauce</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Season salmon, sear until golden, finish in oven. Make sauce in pan with wine, lemon, dill, butter. Plate beans in center, salmon on top, pour sauce over.</div>
+                        </div>
+                        <div class="pricing">
+                            <span class="cost">Cost: $6.62</span>
+                            <span class="sales">Sales: $30.00</span>
+                            <span class="margin">Margin: $23.38</span>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Burrata & Roasted Tomatoes</div>
+                            <div class="recipe-price">$14</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Burrata</span>
+                                <span class="ingredient-qty">2 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Arugula, dressed</span>
+                                <span class="ingredient-qty">0.25 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Campari tomatoes, roasted</span>
+                                <span class="ingredient-qty">2 ea</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Pistachios, Paesano bread</span>
+                                <span class="ingredient-qty">garnish</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Place dressed arugula on bowl. Place burrata on arugula, season with sea salt. Place bread behind, tomatoes in center, garnish with pistachios & EVOO.</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Edamame Hummus</div>
+                            <div class="recipe-price">$13</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Chickpeas, drained</span>
+                                <span class="ingredient-qty">60 oz</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Shelled edamame, thawed</span>
+                                <span class="ingredient-qty">2 lbs</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Lemon juice, tahini</span>
+                                <span class="ingredient-qty">1 cup ea</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Olive oil, garlic, cumin</span>
+                                <span class="ingredient-qty">blend</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Process chickpeas in robot coupe with water, garlic, tahini, lemon. Add olive oil slowly. Process edamame separately, combine with base hummus. Season with S&P.</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">The Butcher Pizza</div>
+                            <div class="recipe-price">$20</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Prosciutto, capicola</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Soppressata, mozzarella</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Wagyu Meatballs</div>
+                            <div class="recipe-price">$17</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">San marzano tomato basil sauce</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Herb ricotta</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Reggiano, rustic bread</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Mediterranean Flatbread</div>
+                            <div class="recipe-price">$16</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Goat cheese, artichokes</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Olives, roasted peppers</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Shrimp Potstickers</div>
+                            <div class="recipe-price">$17</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Fresno chilies</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Sweet chile ponzu</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Grilled Cheese & Tomato Soup</div>
+                            <div class="recipe-price">$15</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Taleggio cheese panini</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">White truffle oil</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Pear & Gorgonzola Pizza</div>
+                            <div class="recipe-price">$19</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">D'anjou pear</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Caramelized onion, honey</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Prime Bistro Steak</div>
+                            <div class="recipe-price">$34</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Truffle potato gratin</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Petit green beans</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-item placeholder">
+                        <div class="recipe-header">
+                            <div class="recipe-name">Chicken Alla Francese</div>
+                            <div class="recipe-price">$24</div>
+                        </div>
+                        <div class="ingredients">
+                            <div class="ingredients-title">Ingredients:</div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Spicy garlicky broccolini</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                            <div class="ingredient-item">
+                                <span class="ingredient-name">Lemon herb sauce</span>
+                                <span class="ingredient-qty">TBD</span>
+                            </div>
+                        </div>
+                        <div class="method">
+                            <div class="method-title">Method:</div>
+                            <div class="method-text">Recipe details to be added</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

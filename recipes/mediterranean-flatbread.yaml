@@ -1,0 +1,85 @@
+name: "Mediterranean Flatbread"
+menu_periods:
+  - dinner
+  - lunch
+plate_info: "Flatbread plate"
+status: complete
+
+ingredients:
+  - name: "Pizza dough, rolled & docked"
+    quantity: 0.5
+    unit: "ea"
+    cost_per_unit: 0.40
+    total_cost: 0.20
+  - name: "Shredded mozzarella"
+    quantity: 1.25
+    unit: "oz"
+    cost_per_unit: 0.55
+    total_cost: 0.69
+  - name: "Goat cheese, crumbled"
+    quantity: 0.75
+    unit: "oz"
+    cost_per_unit: 0.67
+    total_cost: 0.50
+  - name: "Roman artichoke, rough chopped"
+    quantity: 1
+    unit: "ea"
+    cost_per_unit: 0.80
+    total_cost: 0.80
+  - name: "Mixed olives, rough chopped"
+    quantity: 0.25
+    unit: "cup"
+    cost_per_unit: 1.80
+    total_cost: 0.45
+  - name: "Roasted red peppers, thick julienne cut"
+    quantity: 4
+    unit: "pc"
+    cost_per_unit: 0.05
+    total_cost: 0.20
+  - name: "Mixed cherry tomatoes, quartered"
+    quantity: 3
+    unit: "ea"
+    cost_per_unit: 0.07
+    total_cost: 0.21
+  - name: "Basil, chopped"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.05
+    total_cost: 0.05
+  - name: "Italian parsley, chopped"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.02
+    total_cost: 0.02
+  - name: "EVOO"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.25
+    total_cost: 0.25
+
+method:
+  prep_notes: "Roll out dough into rectangle shape and dock. Brush dough with EVOO."
+  cooking_instructions: "Add mozzarella cheese. Garnish with artichokes, olives, peppers & tomatoes. Add crumbled goat cheese and bake until golden brown and crispy."
+  plating_instructions: "Cut into 6 pieces, place on board with parchment paper. Garnish with basil, parsley & EVOO."
+  timing_notes: "Bake until golden brown and crispy"
+
+pricing:
+  ingredient_cost: 3.36
+  sales_price: 14.00
+  cost_percentage: 24.00
+  contribution_margin: 10.64
+
+tags:
+  - flatbread
+  - mediterranean
+  - vegetarian
+dietary:
+  - vegetarian
+cooking_methods:
+  - baked
+  - stone_fired
+
+source:
+  image_file: "IMG_4810.jpeg"
+  date_added: "2025-06-28"
+  notes: "Mediterranean flatbread with artichokes, olives, and goat cheese"

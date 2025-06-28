@@ -1,0 +1,63 @@
+name: "Grilled Cheese & Tomato Soup"
+menu_periods:
+  - dinner
+  - lunch
+plate_info: "Charcuterie board and fondue pot"
+status: complete
+
+ingredients:
+  - name: "Paesano bread, cut into 1/2 inch slices"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.10
+    total_cost: 0.20
+  - name: "Taleggio Cheese, cut into a thin slice"
+    quantity: 2.5
+    unit: "each"
+    cost_per_unit: 0.10
+    total_cost: 0.25
+  - name: "Truffle Oil"
+    quantity: 0.25
+    unit: "oz"
+    cost_per_unit: 0.37
+    total_cost: 0.09
+  - name: "Green Grapes"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.11
+    total_cost: 0.11
+  - name: "Butter"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.11
+    total_cost: 0.33
+  - name: "Tomato soup"
+    quantity: 1
+    unit: "serving"
+    cost_per_unit: 0.79
+    total_cost: 0.79
+
+method:
+  prep_notes: "Have all ingredients prepped and ready"
+  cooking_instructions: "Brush one side of the paesano bread with butter. Drizzle the inside of the bread with truffle oil and lay the cheese on."
+  plating_instructions: "Place in the panini machine and toast until golden brown and the cheese is melted. Slice sandwich on a bias and plate with cup of soup (marinara, butter, and cream) and garnish with grapes."
+  timing_notes: "Toast until golden brown and cheese melted"
+
+pricing:
+  ingredient_cost: 2.95
+  sales_price: 12.00
+  cost_percentage: 24.54
+  contribution_margin: 9.06
+
+tags:
+  - appetizer
+  - comfort_food
+dietary:
+  - vegetarian
+cooking_methods:
+  - panini_pressed
+
+source:
+  image_file: "IMG_4811.jpeg"
+  date_added: "2025-06-28"
+  notes: "Complete recipe with detailed ingredients and method"

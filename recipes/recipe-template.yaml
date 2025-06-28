@@ -1,0 +1,45 @@
+# Recipe Template for CRÙ Wine Bar
+# This template defines the standard structure for all recipe YAML files
+
+name: "Recipe Name"
+menu_periods:
+  - dinner    # Options: brunch, lunch, happy_hour, dinner
+plate_info: "Serving plate or presentation style"
+status: complete  # Options: complete, placeholder, draft
+
+# Ingredient list with quantities and costs
+ingredients:
+  - name: "Ingredient name"
+    quantity: 1.0
+    unit: "oz"        # Common units: oz, ea, pc, cup, tsp, tbsp, lb, serving, garnish
+    cost_per_unit: 0.50
+    total_cost: 0.50
+    notes: ""         # Optional preparation notes
+
+# Cooking method and assembly instructions
+method:
+  prep_notes: "Any prep work needed beforehand"
+  cooking_instructions: "Detailed step-by-step cooking method"
+  plating_instructions: "How to plate and present the dish"
+  timing_notes: "Cook times, rest times, etc."
+
+# Financial information
+pricing:
+  ingredient_cost: 0.00
+  sales_price: 0.00
+  cost_percentage: 0.00
+  contribution_margin: 0.00
+
+# Additional metadata
+tags:
+  - appetizer     # Options: appetizer, entree, pizza, flatbread, special
+dietary:
+  - vegetarian    # Options: vegetarian, vegan, gluten_free, dairy_free
+cooking_methods:
+  - seared        # Options: seared, roasted, grilled, fried, stone_fired, etc.
+
+# Source information
+source:
+  image_file: ""
+  date_added: ""
+  notes: ""

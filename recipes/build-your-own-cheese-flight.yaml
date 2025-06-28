@@ -1,0 +1,79 @@
+name: "Build Your Own Cheese Flight"
+menu_periods:
+  - dinner
+  - appetizer
+plate_info: "Slate cheese plate"
+status: complete
+
+ingredients:
+  - name: "Selected cheeses, 3 or 4"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 1.21
+    total_cost: 2.42
+  - name: "Apple, 1/3"
+    quantity: 0.33
+    unit: "each"
+    cost_per_unit: 0.95
+    total_cost: 0.31
+  - name: "Pear, 1/3"
+    quantity: 0.33
+    unit: "each"
+    cost_per_unit: 1.50
+    total_cost: 0.50
+  - name: "Green grapes"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.11
+    total_cost: 0.33
+  - name: "Honeycomb"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.90
+    total_cost: 0.45
+  - name: "Fig Jam"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.20
+    total_cost: 0.10
+  - name: "Paesano bread, 2 slices 1/2 inch thick"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.10
+    total_cost: 0.20
+  - name: "Toasted in the panini machine, cut each slice into three pieces"
+    quantity: 1
+    unit: "serving"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Lemon Leaf"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+
+method:
+  prep_notes: "Select 3-4 artisan cheeses for the flight"
+  cooking_instructions: "Arrange the cheese like the picture. Brush the paesano bread with evo and toast in the panini machine."
+  plating_instructions: "Cut each slice into three pieces and serve in the bread basket."
+  timing_notes: "Toast bread until golden"
+
+pricing:
+  ingredient_cost: 4.31
+  sales_price: 22.00
+  cost_percentage: 19.58
+  contribution_margin: 17.69
+
+tags:
+  - appetizer
+  - cheese_flight
+  - shareable
+dietary:
+  - vegetarian
+cooking_methods:
+  - toasted
+
+source:
+  image_file: "IMG_4801.jpeg"
+  date_added: "2025-06-28"
+  notes: "Customizable cheese flight with accompaniments"

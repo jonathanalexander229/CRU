@@ -1,0 +1,74 @@
+name: "The Butcher Pizza"
+menu_periods:
+  - dinner
+  - lunch
+plate_info: "Pizza plate"
+status: complete
+
+ingredients:
+  - name: "Pizza dough 8 oz each"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.18
+    total_cost: 0.18
+  - name: "Raw pizza sauce"
+    quantity: 2.5
+    unit: "oz"
+    cost_per_unit: 0.06
+    total_cost: 0.15
+  - name: "Mozzarella, shredded polly-o"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.23
+    total_cost: 0.46
+  - name: "Prosciutto sliced thin"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.75
+    total_cost: 0.75
+  - name: "Capicola sliced thin"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.68
+    total_cost: 0.68
+  - name: "Soppressata Salami thin"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.61
+    total_cost: 0.61
+  - name: "Parmesan, grated"
+    quantity: 1
+    unit: "tbsp"
+    cost_per_unit: 0.60
+    total_cost: 0.60
+  - name: "Crushed red chile"
+    quantity: 1
+    unit: "pinch"
+    cost_per_unit: 0.05
+    total_cost: 0.05
+
+method:
+  prep_notes: "Preheat oven to 500 degrees"
+  cooking_instructions: "1. Stretch pizza dough. 2. Ladle pizza sauce on the pizza dough. 3. Add shredded mozzarella. 4. Add the prosciutto, soppressata & capicola."
+  plating_instructions: "Bake at 500 degrees until pizza is golden brown. 5. Cut into 8 pieces. Brush edges with small amount of olive oil. 6. Top with parmesan & crushed red chiles."
+  timing_notes: "Bake until golden brown"
+
+pricing:
+  ingredient_cost: 3.48
+  sales_price: 18.00
+  cost_percentage: 19.33
+  contribution_margin: 14.52
+
+tags:
+  - pizza
+  - stone_fired
+  - meat_lovers
+dietary: []
+cooking_methods:
+  - stone_fired
+  - baked
+
+source:
+  image_file: "IMG_4808.jpeg"
+  date_added: "2025-06-28"
+  notes: "Meat lovers pizza with three cured meats"

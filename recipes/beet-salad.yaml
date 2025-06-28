@@ -1,0 +1,75 @@
+name: "Beet Salad"
+menu_periods:
+  - dinner
+plate_info: "Blue Bowl"
+status: complete
+
+ingredients:
+  - name: "Gold beets, roasted & wedged"
+    quantity: 3
+    unit: "pc"
+    cost_per_unit: 0.85
+    total_cost: 2.55
+    notes: "Estimated cost based on total"
+  - name: "Candystripe beets"
+    quantity: 4
+    unit: "pc"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Haricot verts, blanched"
+    quantity: 9
+    unit: "pc"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "Goat cheese"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Part of total cost"
+  - name: "EVOO, lemon juice, torn basil"
+    quantity: 1
+    unit: "dressing"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+    notes: "Dressing components"
+  - name: "Italian parsley, chopped"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+  - name: "Microgreens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.00
+    total_cost: 0.00
+
+method:
+  prep_notes: "Roast and wedge gold beets, blanch haricot verts"
+  cooking_instructions: "Toss green beans and beets with EVOO, lemon juice, torn basil & S&P."
+  plating_instructions: "Plate in bowl, crumble goat cheese over salad. Garnish with chopped parsley and microgreens."
+  timing_notes: "Serve immediately after plating"
+
+pricing:
+  ingredient_cost: 2.55
+  sales_price: 15.00
+  cost_percentage: 17.00
+  contribution_margin: 12.45
+
+tags:
+  - salad
+  - appetizer
+  - vegetarian
+dietary:
+  - vegetarian
+  - gluten_free
+cooking_methods:
+  - roasted
+  - blanched
+
+source:
+  image_file: "condensed_all_menus.html"
+  date_added: "2025-06-28"
+  notes: "Existing complete recipe from condensed menu"
