@@ -186,3 +186,123 @@ method:
   prep_notes: "Roast and wedge gold beets"
   prep_notes_es: "Asar y cortar remolachas doradas"
 ```
+
+### AI-Powered Recipe Generation Pipeline (FUTURE)
+**Goal**: Implement an automated AI agentic system to convert raw content into structured YAML recipes
+
+**Content Input Types**:
+- Food photography (plated dishes, ingredients, cooking process shots)
+- Handwritten recipe cards and notes
+- Screenshots of digital recipes from websites/apps
+- Menu PDFs and printed materials
+- Video content of food preparation
+- Voice recordings of recipe instructions
+- Mixed media content (photos + text + audio)
+
+**AI Pipeline Architecture**:
+```
+Upload → Content Analysis → Multi-Modal Processing → YAML Generation → Human Review → Integration
+```
+
+**Processing Stages**:
+1. **Content Classification**
+   - Image analysis: food vs. text vs. mixed content
+   - Document type detection (recipe card, menu, ingredient list)
+   - Quality assessment and image enhancement
+   - OCR readiness evaluation
+
+2. **Multi-Modal Extraction**
+   - **Vision AI**: Identify ingredients, cooking methods, plating styles
+   - **OCR/Text Extraction**: Convert handwritten/printed text to digital
+   - **NLP Processing**: Parse recipe instructions and ingredient lists
+   - **Audio Processing**: Transcribe voice recordings of recipes
+
+3. **Content Understanding**
+   - **Ingredient Recognition**: Visual + text identification with quantities
+   - **Cooking Method Detection**: Identify techniques (seared, roasted, etc.)
+   - **Portion Analysis**: Estimate serving sizes from visual cues
+   - **Cost Estimation**: Ingredient pricing based on market data
+   - **Dietary Classification**: Auto-tag vegetarian, gluten-free, etc.
+
+4. **YAML Generation**
+   - **Structured Output**: Generate complete recipe YAML files
+   - **Template Compliance**: Ensure compatibility with existing schema
+   - **Validation**: Check completeness and data integrity
+   - **Enhancement**: Add missing fields with intelligent defaults
+
+**Implementation Components**:
+
+**Backend Services**:
+```python
+# AI Processing Pipeline
+services/
+  image_processor.py      # Computer vision for food/ingredient recognition
+  ocr_engine.py          # Text extraction from images/PDFs
+  nlp_parser.py          # Recipe text parsing and structuring
+  cost_estimator.py      # Ingredient pricing intelligence
+  yaml_generator.py      # YAML output formatting and validation
+  quality_checker.py     # Content validation and completeness scoring
+```
+
+**Frontend Upload Interface**:
+```javascript
+// Multi-file upload with progress tracking
+upload/
+  drag_drop_zone.js      # File upload interface
+  preview_gallery.js     # Content preview before processing
+  processing_status.js   # Real-time pipeline progress
+  review_editor.js       # Human review and correction interface
+```
+
+**AI Model Integration**:
+- **Vision Models**: Food recognition, ingredient identification
+- **OCR Models**: Handwriting recognition, document processing
+- **LLM Integration**: Recipe parsing, instruction generation, cost estimation
+- **Specialized APIs**: Nutrition data, ingredient databases, pricing services
+
+**User Workflow**:
+1. **Upload Content** - Drag/drop images, PDFs, audio files
+2. **AI Processing** - Automated content analysis and extraction
+3. **Review & Edit** - Human validation with suggested corrections
+4. **Generate Recipe** - Create final YAML file with all metadata
+5. **Integration** - Add to recipe collection with proper tagging
+
+**Advanced Features**:
+- **Batch Processing**: Upload multiple recipes simultaneously
+- **Learning System**: Improve accuracy based on user corrections
+- **Template Recognition**: Auto-detect restaurant-specific formats
+- **Brand Integration**: Apply current brand configuration to generated recipes
+- **Multi-Language**: Generate Spanish translations automatically
+- **Version Control**: Track recipe modifications and improvements
+
+**Quality Assurance**:
+- **Confidence Scoring**: Rate extraction accuracy for each field
+- **Human-in-the-Loop**: Flag low-confidence items for manual review
+- **Validation Rules**: Ensure logical consistency (costs, quantities, methods)
+- **Duplicate Detection**: Identify similar recipes to prevent redundancy
+
+**Technical Requirements**:
+- **Cloud Infrastructure**: Scalable processing for image/document analysis
+- **API Integration**: Vision AI, OCR services, LLM providers
+- **Storage**: Secure handling of uploaded content and generated recipes
+- **Performance**: Real-time processing with progress feedback
+- **Privacy**: Secure handling of proprietary restaurant recipes
+
+**Estimated Development Effort**: 6-8 weeks for MVP
+- Week 1-2: Upload interface and basic image processing
+- Week 3-4: OCR and text extraction pipeline
+- Week 5-6: YAML generation and validation system
+- Week 7-8: Human review interface and integration
+
+**Success Metrics**:
+- **Accuracy**: >90% correct ingredient identification
+- **Completeness**: >85% of required YAML fields auto-populated
+- **Speed**: <2 minutes processing time per recipe
+- **User Satisfaction**: <10% recipes require major manual corrections
+
+**Future Enhancements**:
+- **Video Processing**: Extract recipes from cooking videos
+- **Real-time Collaboration**: Multiple users reviewing same recipe
+- **API Endpoints**: Allow external systems to submit content
+- **Mobile App**: Native mobile upload and review capabilities
+- **Integration Marketplace**: Connect with POS systems, inventory management
