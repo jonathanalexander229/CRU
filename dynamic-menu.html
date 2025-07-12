@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar - Dynamic Menu</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .menu-selector {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .menu-selector select {
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background: white;
+            color: #2c3e50;
+            cursor: pointer;
+            min-width: 200px;
+        }
+        
+        .menu-selector select:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e8ecf0;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-header.brunch {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .card-header.lunch {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .card-header.dinner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-header.happy_hour {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #2c3e50;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        
+        .card-header .plate-info {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .ingredients {
+            margin-bottom: 20px;
+        }
+        
+        .ingredients h3 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .ingredient-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .method {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .method h3 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        
+        .method p {
+            margin: 5px 0;
+            line-height: 1.5;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ecf0f1;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .cost {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        .price::before {
+            content: "Sales: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        
+        .margin {
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .margin::before {
+            content: "Margin: ";
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        .error {
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            text-transform: uppercase;
+        }
+        
+        .tag.dietary {
+            background: #27ae60;
+        }
+        
+        .tag.cooking {
+            background: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CRÙ Wine Bar - Dynamic Menu</h1>
+        </div>
+        
+        <div class="menu-selector">
+            <select id="menuPeriodSelect">
+                <option value="all" selected>All Recipes</option>
+                <option value="brunch">Brunch</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="happy_hour">Happy Hour</option>
+                <option value="appetizer">Appetizers</option>
+                <option value="entree">Entrees</option>
+                <option value="pizza">Pizzas</option>
+            </select>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            Loading recipes...
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            Error loading recipes. Please try again.
+        </div>
+        
+        <div id="cardsGrid" class="cards-grid">
+            <!-- Recipe cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        class MenuManager {
+            constructor() {
+                this.recipes = [];
+                this.currentSelection = '';
+                this.initializeEventListeners();
+                this.loadMenuPeriod('all'); // Load all recipes by default
+            }
+
+            initializeEventListeners() {
+                const selector = document.getElementById('menuPeriodSelect');
+                selector.addEventListener('change', (e) => {
+                    this.loadMenuPeriod(e.target.value);
+                });
+            }
+
+            async loadRecipeList() {
+                try {
+                    // Get list of all YAML files in recipes directory
+                    const recipeFiles = [
+                        'beef-tenderloin.yaml',
+                        'beet-salad.yaml',
+                        'brunch-pizza.yaml',
+                        'build-your-own-cheese-flight.yaml',
+                        'burrata-roasted-tomatoes.yaml',
+                        'butcher-pizza.yaml',
+                        'cast-iron-seared-shrimp.yaml',
+                        'charcuterie-premier-cru.yaml',
+                        'cheese-fondue.yaml',
+                        'chicken-alla-francese.yaml',
+                        'crab-cake-benedict.yaml',
+                        'crispy-arancini.yaml',
+                        'cru-burger.yaml',
+                        'edamame-hummus.yaml',
+                        'french-toast.yaml',
+                        'fritto-misto.yaml',
+                        'goat-cheese-beignets.yaml',
+                        'grilled-cheese-tomato-soup.yaml',
+                        'lobster-shrimp-potstickers.yaml',
+                        'margherita-pizza.yaml',
+                        'mediterranean-flatbread.yaml',
+                        'nz-lamb-lollipops.yaml',
+                        'pan-seared-salmon.yaml',
+                        'pear-gorgonzola-pizza.yaml',
+                        'shaking-beef.yaml',
+                        'steak-and-eggs.yaml',
+                        'tomato-bruschetta.yaml',
+                        'wagyu-meatballs.yaml'
+                    ];
+
+                    this.recipes = [];
+                    
+                    for (const file of recipeFiles) {
+                        try {
+                            const response = await fetch(`recipes/${file}`);
+                            if (response.ok) {
+                                const yamlText = await response.text();
+                                const recipe = jsyaml.load(yamlText);
+                                recipe._filename = file;
+                                this.recipes.push(recipe);
+                            }
+                        } catch (error) {
+                            console.warn(`Failed to load ${file}:`, error);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading recipes:', error);
+                    this.showError();
+                }
+            }
+
+            async loadMenuPeriod(selection) {
+                if (!selection) {
+                    this.clearGrid();
+                    return;
+                }
+
+                this.currentSelection = selection;
+                this.showLoading(true);
+                this.hideError();
+
+                try {
+                    if (this.recipes.length === 0) {
+                        await this.loadRecipeList();
+                    }
+
+                    let filteredRecipes = this.recipes;
+                    
+                    if (selection !== 'all') {
+                        // Check if selection is a menu period (brunch, lunch, dinner, happy_hour)
+                        const menuPeriods = ['brunch', 'lunch', 'dinner', 'happy_hour'];
+                        
+                        if (menuPeriods.includes(selection)) {
+                            // Filter by menu period
+                            filteredRecipes = this.recipes.filter(recipe => 
+                                recipe.menu_periods && recipe.menu_periods.includes(selection)
+                            );
+                        } else {
+                            // Filter by recipe type (appetizer, entree, pizza)
+                            filteredRecipes = this.recipes.filter(recipe => 
+                                recipe.tags && recipe.tags.includes(selection)
+                            );
+                        }
+                    }
+
+                    this.renderRecipes(filteredRecipes, selection);
+                } catch (error) {
+                    console.error('Error loading selection:', error);
+                    this.showError();
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            renderRecipes(recipes, selection) {
+                const grid = document.getElementById('cardsGrid');
+                grid.innerHTML = '';
+
+                if (recipes.length === 0) {
+                    grid.innerHTML = '<div class="loading">No recipes found for this selection.</div>';
+                    return;
+                }
+
+                recipes.forEach(recipe => {
+                    const card = this.createRecipeCard(recipe, selection);
+                    grid.appendChild(card);
+                });
+            }
+
+            createRecipeCard(recipe, selection) {
+                const card = document.createElement('div');
+                card.className = 'recipe-card';
+
+                // Determine header class based on selection type or default to first menu period
+                let headerClass = 'dinner'; // default
+                
+                if (selection === 'all' || ['appetizer', 'entree', 'pizza'].includes(selection)) {
+                    // For 'all' or recipe type filters, use the first menu period for styling
+                    headerClass = recipe.menu_periods ? recipe.menu_periods[0] : 'dinner';
+                } else {
+                    // For menu period filters, use the selected period
+                    headerClass = selection;
+                }
+
+                card.innerHTML = `
+                    <div class="card-header ${headerClass}">
+                        <h2>${recipe.name || 'Recipe Name'}</h2>
+                        <div class="plate-info">${recipe.plate_info || 'No plate info'}</div>
+                    </div>
+                    <div class="card-body">
+                        ${this.renderIngredients(recipe.ingredients)}
+                        ${this.renderMethod(recipe.method)}
+                        ${this.renderPricing(recipe.pricing)}
+                        ${this.renderTags(recipe)}
+                    </div>
+                `;
+
+                // Add click event listener to navigate to detail page
+                card.addEventListener('click', () => {
+                    window.location.href = `recipe-detail.html?recipe=${recipe._filename}`;
+                });
+
+                return card;
+            }
+
+            renderIngredients(ingredients) {
+                if (!ingredients || ingredients.length === 0) {
+                    return '<div class="ingredients"><h3>Ingredients</h3><p>No ingredients listed</p></div>';
+                }
+
+                const ingredientsList = ingredients.map(ingredient => `
+                    <li>
+                        ${ingredient.name || 'Unknown ingredient'}
+                        <span class="quantity">${this.formatQuantity(ingredient)}</span>
+                    </li>
+                `).join('');
+
+                return `
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredient-list">
+                            ${ingredientsList}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            formatQuantity(ingredient) {
+                if (ingredient.quantity && ingredient.unit) {
+                    return `${ingredient.quantity} ${ingredient.unit}`;
+                } else if (ingredient.quantity) {
+                    return `${ingredient.quantity}`;
+                } else if (ingredient.unit) {
+                    return ingredient.unit;
+                }
+                return 'as needed';
+            }
+
+            renderMethod(method) {
+                if (!method) {
+                    return '<div class="method"><h3>Method</h3><p>No method provided</p></div>';
+                }
+
+                let methodHtml = '<div class="method"><h3>Method</h3>';
+                
+                if (method.prep_notes) {
+                    methodHtml += `<p><strong>Prep:</strong> ${method.prep_notes}</p>`;
+                }
+                if (method.cooking_instructions) {
+                    methodHtml += `<p><strong>Cooking:</strong> ${method.cooking_instructions}</p>`;
+                }
+                if (method.plating_instructions) {
+                    methodHtml += `<p><strong>Plating:</strong> ${method.plating_instructions}</p>`;
+                }
+                if (method.timing_notes) {
+                    methodHtml += `<p><strong>Timing:</strong> ${method.timing_notes}</p>`;
+                }
+                
+                methodHtml += '</div>';
+                return methodHtml;
+            }
+
+            renderPricing(pricing) {
+                if (!pricing || (!pricing.ingredient_cost && !pricing.sales_price)) {
+                    return '';
+                }
+
+                return `
+                    <div class="pricing">
+                        <span class="cost">Cost: $${(pricing.ingredient_cost || 0).toFixed(2)}</span>
+                        <span class="price">$${(pricing.sales_price || 0).toFixed(2)}</span>
+                        <span class="margin">$${(pricing.contribution_margin || 0).toFixed(2)}</span>
+                    </div>
+                `;
+            }
+
+            renderTags(recipe) {
+                let tagsHtml = '<div class="tags">';
+                
+                if (recipe.tags) {
+                    recipe.tags.forEach(tag => {
+                        tagsHtml += `<span class="tag">${tag}</span>`;
+                    });
+                }
+                
+                if (recipe.dietary) {
+                    recipe.dietary.forEach(diet => {
+                        tagsHtml += `<span class="tag dietary">${diet}</span>`;
+                    });
+                }
+                
+                if (recipe.cooking_methods) {
+                    recipe.cooking_methods.forEach(method => {
+                        tagsHtml += `<span class="tag cooking">${method}</span>`;
+                    });
+                }
+                
+                tagsHtml += '</div>';
+                return tagsHtml;
+            }
+
+            showLoading(show) {
+                const loading = document.getElementById('loading');
+                loading.style.display = show ? 'block' : 'none';
+            }
+
+            showError() {
+                const error = document.getElementById('error');
+                error.style.display = 'block';
+            }
+
+            hideError() {
+                const error = document.getElementById('error');
+                error.style.display = 'none';
+            }
+
+            clearGrid() {
+                const grid = document.getElementById('cardsGrid');
+                grid.innerHTML = '';
+            }
+        }
+
+        // Initialize the menu manager when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new MenuManager();
+        });
+    </script>
+</body>
+</html>

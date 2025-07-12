@@ -1,0 +1,73 @@
+name: "Chicken Alla Francese"
+menu_periods:
+  - dinner
+plate_info: "Large plate"
+status: placeholder
+
+ingredients:
+  - name: "Chicken breast, pounded thin"
+    quantity: 8
+    unit: "oz"
+    cost_per_unit: 1.50
+    total_cost: 12.00
+  - name: "Flour"
+    quantity: 0.5
+    unit: "cup"
+    cost_per_unit: 0.05
+    total_cost: 0.03
+  - name: "Eggs, beaten"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.25
+    total_cost: 0.50
+  - name: "White wine"
+    quantity: 4
+    unit: "oz"
+    cost_per_unit: 0.40
+    total_cost: 1.60
+  - name: "Lemon juice"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.15
+    total_cost: 0.30
+  - name: "Butter"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.30
+    total_cost: 0.60
+  - name: "Spicy garlicky broccolini"
+    quantity: 4
+    unit: "oz"
+    cost_per_unit: 0.75
+    total_cost: 3.00
+  - name: "Fresh herbs"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.10
+    total_cost: 0.10
+
+method:
+  prep_notes: "Pound chicken thin, prepare broccolini, set up dredging station"
+  cooking_instructions: "Dredge chicken in flour then egg, sauté until golden. Deglaze with wine and lemon, finish with butter"
+  plating_instructions: "Place chicken on plate with broccolini, spoon lemon herb sauce over, garnish with herbs"
+  timing_notes: "Chicken should be cooked through but not overcooked"
+
+pricing:
+  ingredient_cost: 18.13
+  sales_price: 24.00
+  cost_percentage: 75.54
+  contribution_margin: 5.87
+
+tags:
+  - entree
+  - chicken
+  - italian
+dietary: []
+cooking_methods:
+  - sautéed
+  - pan_fried
+
+source:
+  image_file: "legacy menu.html reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

@@ -1,0 +1,75 @@
+name: "Crispy Arancini"
+menu_periods:
+  - happy_hour
+  - dinner
+plate_info: "Small plate"
+status: placeholder
+
+ingredients:
+  - name: "Risotto rice, cooked and cooled"
+    quantity: 1
+    unit: "cup"
+    cost_per_unit: 0.30
+    total_cost: 0.30
+  - name: "Mozzarella cheese, cubed"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.30
+    total_cost: 0.60
+  - name: "Parmesan cheese, grated"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.40
+    total_cost: 0.40
+  - name: "Breadcrumbs, panko"
+    quantity: 1
+    unit: "cup"
+    cost_per_unit: 0.15
+    total_cost: 0.15
+  - name: "Eggs, beaten"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.25
+    total_cost: 0.50
+  - name: "Flour"
+    quantity: 0.5
+    unit: "cup"
+    cost_per_unit: 0.05
+    total_cost: 0.03
+  - name: "Marinara sauce"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.25
+    total_cost: 0.75
+  - name: "Fresh basil"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.10
+    total_cost: 0.10
+
+method:
+  prep_notes: "Prepare risotto ahead, cool completely, form balls with mozzarella centers"
+  cooking_instructions: "Dredge in flour, egg, then breadcrumbs. Deep fry at 350°F until golden brown and crispy"
+  plating_instructions: "Arrange on plate, serve with warm marinara sauce, garnish with fresh basil"
+  timing_notes: "Serve immediately while hot and cheese is melted inside"
+
+pricing:
+  ingredient_cost: 2.83
+  sales_price: 12.00
+  cost_percentage: 23.58
+  contribution_margin: 9.17
+
+tags:
+  - appetizer
+  - italian
+  - fried
+dietary:
+  - vegetarian
+cooking_methods:
+  - fried
+  - deep_fried
+
+source:
+  image_file: "happy hour menu reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

@@ -1,0 +1,58 @@
+name: "Steak & Eggs"
+menu_periods:
+  - brunch
+plate_info: "Large plate"
+status: placeholder
+
+ingredients:
+  - name: "Bistro steak, 6 oz"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 8.00
+    total_cost: 8.00
+    notes: "Prime cut"
+  - name: "Eggs"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.25
+    total_cost: 0.50
+  - name: "Breakfast potatoes"
+    quantity: 6
+    unit: "oz"
+    cost_per_unit: 0.25
+    total_cost: 1.50
+  - name: "Mixed greens"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.30
+    total_cost: 0.30
+  - name: "Hollandaise or steak sauce"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.30
+    total_cost: 0.60
+
+method:
+  prep_notes: "Season steak, prepare potatoes"
+  cooking_instructions: "Grill steak to order, cook eggs to preference, roast potatoes until crispy"
+  plating_instructions: "Place steak on plate with eggs and potatoes, serve with sauce and greens"
+  timing_notes: "Cook steak and eggs to customer preference"
+
+pricing:
+  ingredient_cost: 10.90
+  sales_price: 26.00
+  cost_percentage: 41.92
+  contribution_margin: 15.10
+
+tags:
+  - entree
+  - brunch
+  - beef
+dietary: []
+cooking_methods:
+  - grilled
+
+source:
+  image_file: "brunch menu reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

@@ -1,0 +1,68 @@
+name: "CRÙ Burger"
+menu_periods:
+  - lunch
+plate_info: "Large plate"
+status: placeholder
+
+ingredients:
+  - name: "Wagyu beef patty"
+    quantity: 8
+    unit: "oz"
+    cost_per_unit: 2.00
+    total_cost: 16.00
+    notes: "House ground wagyu blend"
+  - name: "Brioche bun"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.75
+    total_cost: 0.75
+  - name: "Aged cheddar"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.50
+    total_cost: 1.00
+  - name: "Caramelized onions"
+    quantity: 1
+    unit: "oz"
+    cost_per_unit: 0.25
+    total_cost: 0.25
+  - name: "Arugula"
+    quantity: 0.5
+    unit: "oz"
+    cost_per_unit: 0.20
+    total_cost: 0.10
+  - name: "House aioli"
+    quantity: 1
+    unit: "tbsp"
+    cost_per_unit: 0.10
+    total_cost: 0.10
+  - name: "French fries"
+    quantity: 6
+    unit: "oz"
+    cost_per_unit: 0.15
+    total_cost: 0.90
+
+method:
+  prep_notes: "Form patties, prepare toppings, heat grill"
+  cooking_instructions: "Grill patty to desired doneness, toast bun, melt cheese on patty"
+  plating_instructions: "Assemble burger with aioli, arugula, patty with cheese, caramelized onions, serve with fries"
+  timing_notes: "Cook patty to customer preference, serve hot"
+
+pricing:
+  ingredient_cost: 19.10
+  sales_price: 28.00
+  cost_percentage: 68.21
+  contribution_margin: 8.90
+
+tags:
+  - entree
+  - lunch
+  - beef
+dietary: []
+cooking_methods:
+  - grilled
+
+source:
+  image_file: "lunch menu reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

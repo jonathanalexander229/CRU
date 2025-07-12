@@ -1,0 +1,65 @@
+name: "Brunch Pizza"
+menu_periods:
+  - brunch
+plate_info: "Pizza plate"
+status: placeholder
+
+ingredients:
+  - name: "Pizza dough"
+    quantity: 1
+    unit: "each"
+    cost_per_unit: 0.18
+    total_cost: 0.18
+  - name: "Breakfast sauce base"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.15
+    total_cost: 0.30
+    notes: "Hollandaise or cream sauce"
+  - name: "Mozzarella cheese"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.30
+    total_cost: 0.90
+  - name: "Bacon or sausage"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 1.00
+    total_cost: 2.00
+  - name: "Eggs"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.25
+    total_cost: 0.50
+  - name: "Fresh herbs"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.15
+    total_cost: 0.15
+    notes: "Chives or parsley"
+
+method:
+  prep_notes: "Prepare pizza dough, cook bacon/sausage"
+  cooking_instructions: "Stretch dough, add sauce and cheese, top with meat, bake, add cracked eggs during final minutes"
+  plating_instructions: "Cut into slices, garnish with fresh herbs"
+  timing_notes: "Eggs should be just set when served"
+
+pricing:
+  ingredient_cost: 4.03
+  sales_price: 18.00
+  cost_percentage: 22.39
+  contribution_margin: 13.97
+
+tags:
+  - pizza
+  - brunch
+  - breakfast
+dietary: []
+cooking_methods:
+  - stone_fired
+  - baked
+
+source:
+  image_file: "brunch menu reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

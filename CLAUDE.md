@@ -82,11 +82,12 @@ source:
 
 ## Development Progress
 
-1. **Extract data**: ✅ COMPLETED - 20 recipes converted to YAML
-2. **Create templates**: NEXT - Build HTML templates for recipe cards
-3. **Build generator**: NEXT - Python/JavaScript system to merge YAML + templates
-4. **Maintain styling**: NEXT - Preserve existing CSS design system
+1. **Extract data**: ✅ COMPLETED - 28 recipes converted to YAML (20 complete + 8 placeholders)
+2. **Create dynamic system**: ✅ COMPLETED - Dynamic menu with dropdown filtering and recipe detail pages
+3. **Build generator**: FUTURE - Python/JavaScript system to merge YAML + templates
+4. **Maintain styling**: ✅ COMPLETED - Preserved existing CSS design system in dynamic interface
 5. **Add management**: FUTURE - Easy ways to add/edit/remove recipes
+6. **Spanish translation**: FUTURE - Add bilingual support to recipe system
 
 ## Key Benefits of Refactor
 
@@ -145,4 +146,43 @@ python generate_menus.py
 
 # Validate all recipes (future)
 python validate_recipes.py
+```
+
+## Future Development Roadmap
+
+### Spanish Translation Implementation (FUTURE)
+**Goal**: Add bilingual Spanish/English support to the recipe management system
+
+**Approach**: Extend YAML schema with Spanish translation fields
+- Add `_es` suffix fields for all user-facing content (name_es, ingredients.name_es, method.prep_notes_es, etc.)
+- Implement language toggle in dynamic menu interface
+- Create translation helper functions for graceful fallback to English when Spanish missing
+- Update recipe detail pages with language switching capability
+
+**Estimated Effort**: 2-3 hours for core implementation + ongoing translation work
+
+**Key Considerations**:
+- Spanish text typically 15-25% longer than English - may require CSS layout adjustments
+- Maintain fallback to English for missing translations
+- Consider keeping some culinary terms in English (EVOO, S&P, etc.)
+- Implement user language preference persistence
+
+**Translation Priority Order**:
+1. Most popular dinner items and all brunch recipes
+2. Common appetizers and shared menu items  
+3. Complete remaining recipe collection
+4. UI elements (buttons, labels, dropdown options)
+
+**Schema Example**:
+```yaml
+name: "Beet Salad"
+name_es: "Ensalada de Remolacha"
+ingredients:
+  - name: "Gold beets, roasted & wedged"
+    name_es: "Remolachas doradas, asadas y cortadas"
+    unit: "pc"
+    unit_es: "pzs"
+method:
+  prep_notes: "Roast and wedge gold beets"
+  prep_notes_es: "Asar y cortar remolachas doradas"
 ```

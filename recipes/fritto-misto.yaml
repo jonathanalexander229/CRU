@@ -1,0 +1,65 @@
+name: "Fritto Misto"
+menu_periods:
+  - dinner
+  - happy_hour
+plate_info: "Large sharing plate"
+status: placeholder
+
+ingredients:
+  - name: "Point Judith calamari"
+    quantity: 4
+    unit: "oz"
+    cost_per_unit: 1.25
+    total_cost: 5.00
+    notes: "USA sourced calamari"
+  - name: "Shrimp, 16-20 count"
+    quantity: 6
+    unit: "pieces"
+    cost_per_unit: 0.75
+    total_cost: 4.50
+  - name: "Seasoned flour"
+    quantity: 1
+    unit: "cup"
+    cost_per_unit: 0.10
+    total_cost: 0.10
+  - name: "Spicy san marzano marinara"
+    quantity: 4
+    unit: "oz"
+    cost_per_unit: 0.30
+    total_cost: 1.20
+  - name: "Lemon wedges"
+    quantity: 2
+    unit: "wedges"
+    cost_per_unit: 0.05
+    total_cost: 0.10
+  - name: "Fresh herbs"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.10
+    total_cost: 0.10
+
+method:
+  prep_notes: "Clean and prepare seafood, heat oil to 350°F"
+  cooking_instructions: "Dredge seafood in seasoned flour, fry until golden and crispy, about 2-3 minutes"
+  plating_instructions: "Arrange fried seafood on plate, serve with warm marinara sauce and lemon wedges, garnish with herbs"
+  timing_notes: "Serve immediately while hot and crispy"
+
+pricing:
+  ingredient_cost: 11.00
+  sales_price: 18.00
+  cost_percentage: 61.11
+  contribution_margin: 7.00
+
+tags:
+  - appetizer
+  - seafood
+  - fried
+dietary: []
+cooking_methods:
+  - fried
+  - deep_fried
+
+source:
+  image_file: "legacy menu.html reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

@@ -1,0 +1,64 @@
+name: "Crab Cake Benedict"
+menu_periods:
+  - brunch
+plate_info: "Large plate"
+status: placeholder
+
+ingredients:
+  - name: "English muffin halves"
+    quantity: 2
+    unit: "halves"
+    cost_per_unit: 0.50
+    total_cost: 1.00
+  - name: "Crab cakes"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 3.50
+    total_cost: 7.00
+    notes: "House made crab cakes"
+  - name: "Poached eggs"
+    quantity: 2
+    unit: "each"
+    cost_per_unit: 0.25
+    total_cost: 0.50
+  - name: "Hollandaise sauce"
+    quantity: 3
+    unit: "oz"
+    cost_per_unit: 0.40
+    total_cost: 1.20
+  - name: "Baby greens"
+    quantity: 1
+    unit: "garnish"
+    cost_per_unit: 0.30
+    total_cost: 0.30
+  - name: "Breakfast potatoes"
+    quantity: 4
+    unit: "oz"
+    cost_per_unit: 0.25
+    total_cost: 1.00
+
+method:
+  prep_notes: "Prepare crab cakes, poach eggs, warm hollandaise"
+  cooking_instructions: "Toast muffins, warm crab cakes, poach eggs to order"
+  plating_instructions: "Place muffin halves on plate, top with crab cakes and poached eggs, ladle hollandaise over top, serve with potatoes and greens"
+  timing_notes: "Eggs should be soft poached, serve immediately"
+
+pricing:
+  ingredient_cost: 11.00
+  sales_price: 24.00
+  cost_percentage: 45.83
+  contribution_margin: 13.00
+
+tags:
+  - entree
+  - brunch
+  - seafood
+dietary: []
+cooking_methods:
+  - poached
+  - pan_fried
+
+source:
+  image_file: "brunch menu reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"

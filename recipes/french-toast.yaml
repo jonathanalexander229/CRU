@@ -1,0 +1,63 @@
+name: "French Toast"
+menu_periods:
+  - brunch
+plate_info: "Large plate"
+status: placeholder
+
+ingredients:
+  - name: "Brioche bread, thick sliced"
+    quantity: 3
+    unit: "slices"
+    cost_per_unit: 0.50
+    total_cost: 1.50
+    notes: "Estimated cost"
+  - name: "Egg custard mixture"
+    quantity: 1
+    unit: "portion"
+    cost_per_unit: 0.75
+    total_cost: 0.75
+    notes: "Eggs, cream, vanilla, spices"
+  - name: "Fresh berries"
+    quantity: 0.25
+    unit: "cup"
+    cost_per_unit: 1.00
+    total_cost: 0.25
+    notes: "Seasonal berries"
+  - name: "Maple syrup"
+    quantity: 2
+    unit: "oz"
+    cost_per_unit: 0.50
+    total_cost: 1.00
+    notes: "Pure maple syrup"
+  - name: "Butter"
+    quantity: 1
+    unit: "pat"
+    cost_per_unit: 0.25
+    total_cost: 0.25
+    notes: "For cooking and serving"
+
+method:
+  prep_notes: "Prepare custard mixture, slice brioche thick"
+  cooking_instructions: "Soak brioche in custard, cook on griddle until golden brown"
+  plating_instructions: "Stack on plate, garnish with berries, serve with maple syrup"
+  timing_notes: "Serve hot off the griddle"
+
+pricing:
+  ingredient_cost: 3.75
+  sales_price: 16.00
+  cost_percentage: 23.44
+  contribution_margin: 12.25
+
+tags:
+  - entree
+  - brunch
+  - sweet
+dietary:
+  - vegetarian
+cooking_methods:
+  - griddled
+
+source:
+  image_file: "brunch menu reference"
+  date_added: "2025-07-12"
+  notes: "Placeholder recipe based on menu reference - needs detailed ingredients and method"
