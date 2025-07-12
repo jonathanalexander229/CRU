@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRÙ Wine Bar - Recipe Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .landing-container {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 60px 40px;
+            max-width: 500px;
+            margin: 20px;
+        }
+        
+        .logo {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .description {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .features {
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .feature {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .feature::before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <div class="logo">CRÙ</div>
+        <div class="subtitle">Wine Bar Recipe Management</div>
+        
+        <div class="description">
+            A modern, dynamic recipe management system for restaurant operations. 
+            Built with YAML data storage and real-time filtering capabilities.
+        </div>
+        
+        <a href="dynamic-menu.html" class="cta-button">
+            View Dynamic Menu System →
+        </a>
+        
+        <div class="features">
+            <div class="feature">28 complete and placeholder recipes</div>
+            <div class="feature">Filter by menu period (brunch, lunch, dinner, happy hour)</div>
+            <div class="feature">Filter by recipe type (appetizer, entree, pizza)</div>
+            <div class="feature">Detailed recipe cards with ingredients and pricing</div>
+            <div class="feature">Mobile-responsive design</div>
+            <div class="feature">YAML-based data structure for easy maintenance</div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Alternative Views:</strong></p>
+            <p>
+                <a href="menu.html" style="color: #3498db; text-decoration: none;">Legacy Static Menu</a> | 
+                <a href="condensed_all_menus.html" style="color: #3498db; text-decoration: none;">Condensed View</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
