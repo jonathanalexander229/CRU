@@ -248,6 +248,20 @@
         .tag.cooking {
             background: #e67e22;
         }
+
+        .attribution {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #e8ecf0;
+        }
+
+        .attribution p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #95a5a6;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -280,6 +294,11 @@
         <div id="cardsGrid" class="cards-grid">
             <!-- Recipe cards will be dynamically inserted here -->
         </div>
+        
+        <div class="attribution">
+            <p id="recipeAttribution">Menus and recipes provided by CRÙ Wine Bar</p>
+            <p id="developerAttribution">Developed by Jon Crissey with the assistance of Claude Code</p>
+        </div>
     </div>
 
     <script>
@@ -287,8 +306,138 @@
             constructor() {
                 this.recipes = [];
                 this.currentSelection = '';
+                this.brandConfig = null;
+                this.initializeApp();
+            }
+
+            async initializeApp() {
+                await this.loadBrandConfig();
+                this.applyBrandConfiguration();
                 this.initializeEventListeners();
                 this.loadMenuPeriod('all'); // Load all recipes by default
+            }
+
+            async loadBrandConfig() {
+                try {
+                    const response = await fetch('config/brand.yaml');
+                    if (response.ok) {
+                        const yamlText = await response.text();
+                        this.brandConfig = jsyaml.load(yamlText);
+                    } else {
+                        // Fallback configuration if brand.yaml not found
+                        this.brandConfig = this.getDefaultBrandConfig();
+                    }
+                } catch (error) {
+                    console.warn('Could not load brand configuration, using defaults:', error);
+                    this.brandConfig = this.getDefaultBrandConfig();
+                }
+            }
+
+            getDefaultBrandConfig() {
+                return {
+                    name: "CRÙ",
+                    full_name: "CRÙ Wine Bar",
+                    tagline: "Wine Bar Recipe Management",
+                    colors: {
+                        primary: "#667eea",
+                        secondary: "#764ba2",
+                        accent: "#3498db",
+                        text_dark: "#2c3e50"
+                    },
+                    menu_periods: {
+                        brunch: { name: "Brunch", color: "#f093fb", color_secondary: "#f5576c" },
+                        lunch: { name: "Lunch", color: "#4facfe", color_secondary: "#00f2fe" },
+                        dinner: { name: "Dinner", color: "#667eea", color_secondary: "#764ba2" },
+                        happy_hour: { name: "Happy Hour", color: "#ffecd2", color_secondary: "#fcb69f", text_color: "#2c3e50" }
+                    },
+                    recipe_types: {
+                        appetizer: { name: "Appetizers" },
+                        entree: { name: "Entrees" },
+                        pizza: { name: "Pizzas" }
+                    },
+                    text: {
+                        all_recipes: "All Recipes",
+                        loading: "Loading recipes...",
+                        no_recipes_found: "No recipes found for this selection."
+                    }
+                };
+            }
+
+            applyBrandConfiguration() {
+                // Update page title
+                document.title = `${this.brandConfig.full_name} - Dynamic Menu`;
+                
+                // Update header text
+                const headerTitle = document.querySelector('.header h1');
+                if (headerTitle) {
+                    headerTitle.textContent = `${this.brandConfig.full_name} - Dynamic Menu`;
+                }
+
+                // Update attribution text from brand configuration
+                this.updateAttribution();
+
+                // Update dropdown options with brand configuration
+                this.updateDropdownOptions();
+
+                // Apply color scheme via CSS custom properties
+                this.applyCSSVariables();
+            }
+
+            updateAttribution() {
+                // Update recipe attribution
+                const recipeAttribution = document.getElementById('recipeAttribution');
+                if (recipeAttribution && this.brandConfig.attribution) {
+                    const template = this.brandConfig.attribution.recipe_provider || "Menus and recipes provided by {brand_name}";
+                    recipeAttribution.textContent = template.replace('{brand_name}', this.brandConfig.full_name || this.brandConfig.name);
+                }
+
+                // Update developer attribution
+                const developerAttribution = document.getElementById('developerAttribution');
+                if (developerAttribution && this.brandConfig.attribution) {
+                    developerAttribution.textContent = this.brandConfig.attribution.developer || "Developed by Jon Crissey with the assistance of Claude Code";
+                }
+            }
+
+            updateDropdownOptions() {
+                const selector = document.getElementById('menuPeriodSelect');
+                if (!selector) return;
+
+                // Clear existing options
+                selector.innerHTML = '';
+
+                // Add "All Recipes" option
+                const allOption = document.createElement('option');
+                allOption.value = 'all';
+                allOption.textContent = this.brandConfig.text?.all_recipes || 'All Recipes';
+                allOption.selected = true;
+                selector.appendChild(allOption);
+
+                // Add menu period options
+                Object.entries(this.brandConfig.menu_periods || {}).forEach(([key, config]) => {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = config.name || key;
+                    selector.appendChild(option);
+                });
+
+                // Add recipe type options
+                Object.entries(this.brandConfig.recipe_types || {}).forEach(([key, config]) => {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = config.name || key;
+                    selector.appendChild(option);
+                });
+            }
+
+            applyCSSVariables() {
+                const root = document.documentElement;
+                const colors = this.brandConfig.colors || {};
+                
+                // Apply color variables
+                root.style.setProperty('--brand-primary', colors.primary || '#667eea');
+                root.style.setProperty('--brand-secondary', colors.secondary || '#764ba2');
+                root.style.setProperty('--brand-accent', colors.accent || '#3498db');
+                root.style.setProperty('--brand-text-dark', colors.text_dark || '#2c3e50');
             }
 
             initializeEventListeners() {
@@ -401,7 +550,8 @@
                 grid.innerHTML = '';
 
                 if (recipes.length === 0) {
-                    grid.innerHTML = '<div class="loading">No recipes found for this selection.</div>';
+                    const noRecipesText = this.brandConfig?.text?.no_recipes_found || 'No recipes found for this selection.';
+                    grid.innerHTML = `<div class="loading">${noRecipesText}</div>`;
                     return;
                 }
 
@@ -415,8 +565,9 @@
                 const card = document.createElement('div');
                 card.className = 'recipe-card';
 
-                // Determine header class based on selection type or default to first menu period
+                // Determine header class and styling based on selection type
                 let headerClass = 'dinner'; // default
+                let headerStyle = '';
                 
                 if (selection === 'all' || ['appetizer', 'entree', 'pizza'].includes(selection)) {
                     // For 'all' or recipe type filters, use the first menu period for styling
@@ -426,8 +577,14 @@
                     headerClass = selection;
                 }
 
+                // Apply brand configuration colors if available
+                if (this.brandConfig && this.brandConfig.menu_periods && this.brandConfig.menu_periods[headerClass]) {
+                    const periodConfig = this.brandConfig.menu_periods[headerClass];
+                    headerStyle = `style="background: linear-gradient(135deg, ${periodConfig.color} 0%, ${periodConfig.color_secondary} 100%);${periodConfig.text_color ? ` color: ${periodConfig.text_color};` : ''}"`;
+                }
+
                 card.innerHTML = `
-                    <div class="card-header ${headerClass}">
+                    <div class="card-header ${headerClass}" ${headerStyle}>
                         <h2>${recipe.name || 'Recipe Name'}</h2>
                         <div class="plate-info">${recipe.plate_info || 'No plate info'}</div>
                     </div>

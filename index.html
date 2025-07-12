@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRÙ Wine Bar - Recipe Management System</title>
+    <title>Recipe Management System</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -91,10 +92,10 @@
 </head>
 <body>
     <div class="landing-container">
-        <div class="logo">CRÙ</div>
-        <div class="subtitle">Wine Bar Recipe Management</div>
+        <div class="logo" id="brandName">CRÙ</div>
+        <div class="subtitle" id="brandTagline">Wine Bar Recipe Management</div>
         
-        <div class="description">
+        <div class="description" id="brandDescription">
             A modern, dynamic recipe management system for restaurant operations. 
             Built with YAML data storage and real-time filtering capabilities.
         </div>
@@ -118,7 +119,108 @@
                 <a href="menu.html" style="color: #3498db; text-decoration: none;">Legacy Static Menu</a> | 
                 <a href="condensed_all_menus.html" style="color: #3498db; text-decoration: none;">Condensed View</a>
             </p>
+            <p id="recipeAttribution" style="margin-top: 20px; font-size: 0.8em; color: #bdc3c7;">
+                Menus and recipes provided by CRÙ Wine Bar
+            </p>
+            <p id="developerAttribution" style="font-size: 0.8em; color: #bdc3c7;">
+                Developed by Jon Crissey with the assistance of Claude Code
+            </p>
         </div>
     </div>
+
+    <script>
+        // Brand Configuration Loader
+        class BrandManager {
+            constructor() {
+                this.loadBrandConfig();
+            }
+
+            async loadBrandConfig() {
+                try {
+                    const response = await fetch('config/brand.yaml');
+                    let brandConfig;
+                    
+                    if (response.ok) {
+                        const yamlText = await response.text();
+                        brandConfig = jsyaml.load(yamlText);
+                    } else {
+                        brandConfig = this.getDefaultBrandConfig();
+                    }
+                    
+                    this.applyBrandConfiguration(brandConfig);
+                } catch (error) {
+                    console.warn('Could not load brand configuration, using defaults:', error);
+                    this.applyBrandConfiguration(this.getDefaultBrandConfig());
+                }
+            }
+
+            getDefaultBrandConfig() {
+                return {
+                    name: "CRÙ",
+                    tagline: "Wine Bar Recipe Management",
+                    description: "A modern, dynamic recipe management system for restaurant operations. Built with YAML data storage and real-time filtering capabilities.",
+                    full_name: "CRÙ Wine Bar"
+                };
+            }
+
+            applyBrandConfiguration(config) {
+                // Update page title
+                document.title = `${config.full_name || config.name} - Recipe Management System`;
+                
+                // Update brand name
+                const brandNameEl = document.getElementById('brandName');
+                if (brandNameEl) {
+                    brandNameEl.textContent = config.name;
+                }
+                
+                // Update tagline
+                const brandTaglineEl = document.getElementById('brandTagline');
+                if (brandTaglineEl) {
+                    brandTaglineEl.textContent = config.tagline;
+                }
+                
+                // Update description
+                const brandDescriptionEl = document.getElementById('brandDescription');
+                if (brandDescriptionEl) {
+                    brandDescriptionEl.textContent = config.description;
+                }
+
+                // Update attribution text from brand configuration
+                this.updateAttribution(config);
+
+                // Apply color scheme if available
+                if (config.colors) {
+                    const root = document.documentElement;
+                    root.style.setProperty('--brand-primary', config.colors.primary || '#667eea');
+                    root.style.setProperty('--brand-secondary', config.colors.secondary || '#764ba2');
+                    
+                    // Update gradient background if configured
+                    if (config.colors.background_gradient) {
+                        document.body.style.background = `linear-gradient(135deg, ${config.colors.background_gradient.start} 0%, ${config.colors.background_gradient.end} 100%)`;
+                    }
+                }
+            }
+
+            updateAttribution(config) {
+                // Update recipe attribution
+                const recipeAttribution = document.getElementById('recipeAttribution');
+                if (recipeAttribution && config.attribution) {
+                    const template = config.attribution.recipe_provider || "Menus and recipes provided by {brand_name}";
+                    recipeAttribution.textContent = template.replace('{brand_name}', config.full_name || config.name);
+                }
+
+                // Update developer attribution
+                const developerAttribution = document.getElementById('developerAttribution');
+                if (developerAttribution && config.attribution) {
+                    developerAttribution.textContent = config.attribution.developer || "Developed by Jon Crissey with the assistance of Claude Code";
+                }
+            }
+        }
+
+        // Initialize brand configuration when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new BrandManager();
+        });
+    </script>
 </body>
 </html>

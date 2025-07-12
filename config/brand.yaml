@@ -1,0 +1,148 @@
+# Brand Configuration for Recipe Management System
+# Customize all branding elements from this single file
+
+# Basic Brand Information
+name: "CRÙ"
+full_name: "CRÙ Wine Bar"
+tagline: "Wine Bar Recipe Management"
+description: "A modern, dynamic recipe management system for restaurant operations. Built with YAML data storage and real-time filtering capabilities."
+
+# Contact & Location
+website: "https://cruwinebar.com"
+phone: "+1 (555) 123-4567"
+email: "info@cruwinebar.com"
+address:
+  street: "123 Main Street"
+  city: "Anytown"
+  state: "CA"
+  zip: "12345"
+  country: "USA"
+
+# Visual Identity
+colors:
+  primary: "#667eea"        # Main brand color
+  secondary: "#764ba2"      # Secondary brand color
+  accent: "#3498db"         # Accent color for buttons/links
+  success: "#27ae60"        # Success/positive color
+  warning: "#f39c12"        # Warning color
+  danger: "#e74c3c"         # Error/danger color
+  text_dark: "#2c3e50"      # Primary text color
+  text_light: "#7f8c8d"     # Secondary text color
+  background_gradient:
+    start: "#f5f7fa"        # Background gradient start
+    end: "#c3cfe2"          # Background gradient end
+
+# Typography
+fonts:
+  primary: "'Arial', sans-serif"
+  headings: "'Arial', sans-serif"
+  monospace: "'Courier New', monospace"
+
+# Menu Periods Configuration
+menu_periods:
+  brunch:
+    name: "Brunch"
+    name_es: "Brunch"
+    description: "Weekend brunch favorites"
+    color: "#f093fb"
+    color_secondary: "#f5576c"
+    schedule: "Saturday-Sunday, 10:30 AM - 3:00 PM"
+  lunch:
+    name: "Lunch"
+    name_es: "Almuerzo"
+    description: "Midday classics"
+    color: "#4facfe"
+    color_secondary: "#00f2fe"
+    schedule: "Friday, 11:30 AM - 3:00 PM"
+  dinner:
+    name: "Dinner"
+    name_es: "Cena"
+    description: "Evening fine dining"
+    color: "#667eea"
+    color_secondary: "#764ba2"
+    schedule: "Daily, 3:00 PM - 10:30/11:30 PM"
+  happy_hour:
+    name: "Happy Hour"
+    name_es: "Hora Feliz"
+    description: "Afternoon specials"
+    color: "#ffecd2"
+    color_secondary: "#fcb69f"
+    text_color: "#2c3e50"
+    schedule: "Monday-Friday, 3:00 PM - 5:30 PM"
+
+# Recipe Type Configuration
+recipe_types:
+  appetizer:
+    name: "Appetizers"
+    name_es: "Aperitivos"
+    description: "Small plates and starters"
+    icon: "🥗"
+  entree:
+    name: "Entrees"
+    name_es: "Platos Principales"
+    description: "Main course dishes"
+    icon: "🍽️"
+  pizza:
+    name: "Pizzas"
+    name_es: "Pizzas"
+    description: "Stone-fired pizzas"
+    icon: "🍕"
+  dessert:
+    name: "Desserts"
+    name_es: "Postres"
+    description: "Sweet endings"
+    icon: "🍰"
+
+# Social Media & Links
+social:
+  instagram: "@cruwinebar"
+  facebook: "cruwinebar"
+  twitter: "@cruwinebar"
+  yelp: "cru-wine-bar"
+
+# System Configuration
+system:
+  default_language: "en"
+  supported_languages: ["en", "es"]
+  currency: "USD"
+  currency_symbol: "$"
+  date_format: "YYYY-MM-DD"
+  time_format: "12h"
+
+# SEO & Meta Information
+seo:
+  title_template: "{page_title} | {brand_name}"
+  meta_description: "Dynamic recipe management system for {brand_name}. Browse our complete menu with detailed recipes, ingredients, and pricing information."
+  keywords: ["restaurant", "recipes", "menu", "wine bar", "dining"]
+  og_image: "/images/og-image.jpg"
+
+# Features Configuration
+features:
+  enable_pricing: true
+  enable_dietary_info: true
+  enable_translations: true
+  enable_print_mode: true
+  enable_search: false
+  enable_favorites: false
+  enable_reviews: false
+
+# Custom Text Overrides
+text:
+  loading: "Loading recipes..."
+  no_recipes_found: "No recipes found for this selection."
+  error_loading: "Error loading recipes. Please try again."
+  view_details: "View Details"
+  back_to_menu: "← Back to Menu"
+  all_recipes: "All Recipes"
+  recipe_cost: "Cost"
+  recipe_price: "Sales"
+  recipe_margin: "Margin"
+
+# Attribution Settings
+attribution:
+  recipe_provider: "Menus and recipes provided by {brand_name}"
+  developer: "Developed by Jon Crissey with the assistance of Claude Code"
+  
+# Version Information
+version: "1.0.0"
+last_updated: "2025-07-12"

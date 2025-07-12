@@ -249,6 +249,20 @@
             color: #6c757d;
             border-left: 4px solid #17a2b8;
         }
+
+        .attribution {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #e8ecf0;
+        }
+
+        .attribution p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #95a5a6;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -270,16 +284,25 @@
         <div id="recipeDetail" style="display: none;">
             <!-- Recipe detail content will be inserted here -->
         </div>
+        
+        <div class="attribution">
+            <p id="recipeAttribution">Menus and recipes provided by CRÙ Wine Bar</p>
+            <p id="developerAttribution">Developed by Jon Crissey with the assistance of Claude Code</p>
+        </div>
     </div>
 
     <script>
         class RecipeDetailManager {
             constructor() {
                 this.recipe = null;
+                this.brandConfig = null;
                 this.initialize();
             }
 
             async initialize() {
+                await this.loadBrandConfig();
+                this.applyBrandConfiguration();
+                
                 const urlParams = new URLSearchParams(window.location.search);
                 const recipeId = urlParams.get('recipe');
                 
@@ -289,6 +312,78 @@
                 }
 
                 await this.loadRecipe(recipeId);
+            }
+
+            async loadBrandConfig() {
+                try {
+                    const response = await fetch('config/brand.yaml');
+                    if (response.ok) {
+                        const yamlText = await response.text();
+                        this.brandConfig = jsyaml.load(yamlText);
+                    } else {
+                        this.brandConfig = this.getDefaultBrandConfig();
+                    }
+                } catch (error) {
+                    console.warn('Could not load brand configuration, using defaults:', error);
+                    this.brandConfig = this.getDefaultBrandConfig();
+                }
+            }
+
+            getDefaultBrandConfig() {
+                return {
+                    name: "CRÙ",
+                    full_name: "CRÙ Wine Bar",
+                    colors: {
+                        primary: "#667eea",
+                        secondary: "#764ba2"
+                    },
+                    text: {
+                        back_to_menu: "← Back to Menu",
+                        loading: "Loading recipe details...",
+                        error_loading: "Error loading recipe. Please try again."
+                    }
+                };
+            }
+
+            applyBrandConfiguration() {
+                // Update page title
+                document.title = `Recipe Details | ${this.brandConfig.full_name}`;
+                
+                // Update header text
+                const headerTitle = document.querySelector('.header h1');
+                if (headerTitle) {
+                    headerTitle.textContent = this.brandConfig.full_name;
+                }
+
+                // Update back button text
+                const backButton = document.querySelector('.back-button');
+                if (backButton) {
+                    backButton.textContent = this.brandConfig.text?.back_to_menu || '← Back to Menu';
+                }
+
+                // Update loading text
+                const loadingDiv = document.getElementById('loading');
+                if (loadingDiv) {
+                    loadingDiv.textContent = this.brandConfig.text?.loading || 'Loading recipe details...';
+                }
+
+                // Update attribution text from brand configuration
+                this.updateAttribution();
+            }
+
+            updateAttribution() {
+                // Update recipe attribution
+                const recipeAttribution = document.getElementById('recipeAttribution');
+                if (recipeAttribution && this.brandConfig.attribution) {
+                    const template = this.brandConfig.attribution.recipe_provider || "Menus and recipes provided by {brand_name}";
+                    recipeAttribution.textContent = template.replace('{brand_name}', this.brandConfig.full_name || this.brandConfig.name);
+                }
+
+                // Update developer attribution
+                const developerAttribution = document.getElementById('developerAttribution');
+                if (developerAttribution && this.brandConfig.attribution) {
+                    developerAttribution.textContent = this.brandConfig.attribution.developer || "Developed by Jon Crissey with the assistance of Claude Code";
+                }
             }
 
             async loadRecipe(recipeId) {
